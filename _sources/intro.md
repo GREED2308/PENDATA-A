@@ -1,11 +1,11 @@
-# Welcome to your Jupyter Book
+# PENAMBANGAN DATA (Data Mining)
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+Penambangan data (data mining) adalah proses otomatisasi untuk menemukan pola, tren, dan hubungan tersembunyi dalam set data besar menggunakan teknik statistik, matematika, dan machine learning. Teknik ini mengubah data mentah menjadi wawasan berharga (pengetahuan praktis) untuk memprediksi hasil masa depan, mengoptimalkan bisnis, dan meningkatkan pengambilan keputusan.
 
-Check out the content pages bundled with this sample book to see more.
-
-```{tableofcontents}
-```
+Aspek Utama Penambangan Data:
+- Tujuan: Mengekstraksi informasi valid, baru, dan dapat dipahami dari data besar (big data).
+- Proses (KDD - Knowledge Discovery in Databases): Meliputi pembersihan data (data cleansing), integrasi, seleksi, transformasi, penambangan pola, evaluasi, dan penyajian data.
+- Teknik Utama: Asosiasi, Klasifikasi, Klastering (Clustering), Prediksi.
+- Contoh Penggunaan: Analisis perilaku pelanggan, deteksi penipuan keuangan, dan manajemen risiko.
+- Tantangan: Membutuhkan sumber daya komputasi yang besar dan data berkualitas tinggi.
+Penambangan data merupakan bagian krusial dari Business Intelligence untuk mendapatkan keunggulan kompetitif.
