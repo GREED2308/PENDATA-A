@@ -1,4 +1,4 @@
-# Page 1
+# pertemuan 1
 Penambangan data (atau data mining) adalah proses mengekstraksi informasi berharga, pola, tren, dan hubungan tersembunyi dari sekumpulan data besar menggunakan teknik statistik, matematika, dan pembelajaran mesin (machine learning). 
 
 Tujuan utamanya adalah mengubah data mentah menjadi pengetahuan praktis yang dapat digunakan untuk mendukung pengambilan keputusan bisnis atau memecahkan masalah kompleks.

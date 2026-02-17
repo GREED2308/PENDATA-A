@@ -1,4 +1,12 @@
-# PENAMBANGAN DATA (Data Mining)
+# Biodata Diri
+
+- Nama Lengkap: Verdi Setyawan Ardiansyah Putra
+- Nim: 240411100100
+- Kelas: Penambangan Data A
+- Email: Verdi Setiawan Ardiansyah Putra
+- Program studi: Teknik Informatika
+
+## PENAMBANGAN DATA (Data Mining)
 
 Penambangan data (data mining) adalah proses otomatisasi untuk menemukan pola, tren, dan hubungan tersembunyi dalam set data besar menggunakan teknik statistik, matematika, dan machine learning. Teknik ini mengubah data mentah menjadi wawasan berharga (pengetahuan praktis) untuk memprediksi hasil masa depan, mengoptimalkan bisnis, dan meningkatkan pengambilan keputusan.
 
