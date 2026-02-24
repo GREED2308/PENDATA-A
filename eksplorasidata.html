@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Biodata Diri &#8212; PENAMBANGAN DATA A</title>
+    <title>Eksplorasi Data Iris &#8212; PENAMBANGAN DATA A</title>
   
   
   
@@ -62,10 +62,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'eksplorasidata';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="pertemuan 1" href="pertemuan_1.html" />
+    <link rel="prev" title="pertemuan 1" href="pertemuan_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -128,8 +128,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -148,7 +146,7 @@ const thebe_selector_output = ".output, .cell_output"
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -168,15 +166,15 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Biodata Diri
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="pertemuan_1.html">pertemuan 1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="eksplorasidata.html">Eksplorasi Data Iris</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="pertemuan_1.html">pertemuan 1</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Eksplorasi Data Iris</a></li>
 </ul>
 </details></li>
 </ul>
@@ -250,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Feksplorasidata.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -280,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/eksplorasidata.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -364,7 +362,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Biodata Diri</h1>
+    <h1>Eksplorasi Data Iris</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -374,10 +372,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Biodata Diri</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penambangan-data-data-mining">PENAMBANGAN DATA (Data Mining)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">1. Pendahuluan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-exploratory-data-analysis">2. Eksplorasi Data (Exploratory Data Analysis)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-data">2.1 Struktur Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lima-data-pertama">2.2 Lima Data Pertama</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif">3. Statistik Deskriptif</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-awal">4. Analisis Awal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">5. Kesimpulan</a></li>
+</ul>
             </nav>
         </div>
     </div>
@@ -388,30 +392,164 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="biodata-diri">
-<h1>Biodata Diri<a class="headerlink" href="#biodata-diri" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="eksplorasi-data-iris">
+<h1>Eksplorasi Data Iris<a class="headerlink" href="#eksplorasi-data-iris" title="Permalink to this heading">#</a></h1>
+<section id="pendahuluan">
+<h2>1. Pendahuluan<a class="headerlink" href="#pendahuluan" title="Permalink to this heading">#</a></h2>
+<p>Dataset yang digunakan adalah dataset Iris yang berisi 150 data bunga
+dengan 4 fitur numerik (sepal_length, sepal_width, petal_length,
+petal_width) dan 1 fitur kategorikal (species). Dataset ini sering
+digunakan dalam analisis data dan machine learning untuk klasifikasi.</p>
+</section>
+<section id="eksplorasi-data-exploratory-data-analysis">
+<h2>2. Eksplorasi Data (Exploratory Data Analysis)<a class="headerlink" href="#eksplorasi-data-exploratory-data-analysis" title="Permalink to this heading">#</a></h2>
+<section id="struktur-data">
+<h3>2.1 Struktur Data<a class="headerlink" href="#struktur-data" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Nama Lengkap: Verdi Setyawan Ardiansyah Putra</p></li>
-<li><p>Nim: 240411100100</p></li>
-<li><p>Kelas: Penambangan Data A</p></li>
-<li><p>Email: Verdi Setiawan Ardiansyah Putra</p></li>
-<li><p>Program studi: Teknik Informatika</p></li>
+<li><p>Jumlah Baris: 150</p></li>
+<li><p>Jumlah Kolom: 5</p></li>
+<li><p>Tidak terdapat missing value pada dataset.</p></li>
+<li><p>Tipe Data:</p>
+<ul>
+<li><p>4 kolom bertipe float (numerik)</p></li>
+<li><p>1 kolom bertipe object (kategori/species)</p></li>
+</ul>
+</li>
 </ul>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="penambangan-data-data-mining">
-<h1>PENAMBANGAN DATA (Data Mining)<a class="headerlink" href="#penambangan-data-data-mining" title="Permalink to this heading">#</a></h1>
-<p>Penambangan data (data mining) adalah proses otomatisasi untuk menemukan pola, tren, dan hubungan tersembunyi dalam set data besar menggunakan teknik statistik, matematika, dan machine learning. Teknik ini mengubah data mentah menjadi wawasan berharga (pengetahuan praktis) untuk memprediksi hasil masa depan, mengoptimalkan bisnis, dan meningkatkan pengambilan keputusan.</p>
-<p>Aspek Utama Penambangan Data:</p>
-<ul class="simple">
-<li><p>Tujuan: Mengekstraksi informasi valid, baru, dan dapat dipahami dari data besar (big data).</p></li>
-<li><p>Proses (KDD - Knowledge Discovery in Databases): Meliputi pembersihan data (data cleansing), integrasi, seleksi, transformasi, penambangan pola, evaluasi, dan penyajian data.</p></li>
-<li><p>Teknik Utama: Asosiasi, Klasifikasi, Klastering (Clustering), Prediksi.</p></li>
-<li><p>Contoh Penggunaan: Analisis perilaku pelanggan, deteksi penipuan keuangan, dan manajemen risiko.</p></li>
-<li><p>Tantangan: Membutuhkan sumber daya komputasi yang besar dan data berkualitas tinggi.
-Penambangan data merupakan bagian krusial dari Business Intelligence untuk mendapatkan keunggulan kompetitif.</p></li>
-</ul>
-<div class="toctree-wrapper compound">
+<section id="lima-data-pertama">
+<h3>2.2 Lima Data Pertama<a class="headerlink" href="#lima-data-pertama" title="Permalink to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>sepal_length</p></th>
+<th class="head text-center"><p>sepal_width</p></th>
+<th class="head text-center"><p>petal_length</p></th>
+<th class="head text-center"><p>petal_width</p></th>
+<th class="head text-right"><p>species</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>0</p></td>
+<td class="text-center"><p>5.1</p></td>
+<td class="text-center"><p>3.5</p></td>
+<td class="text-center"><p>1.4</p></td>
+<td class="text-right"><p>0.2 Iris-setosa</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>1</p></td>
+<td class="text-center"><p>4.9</p></td>
+<td class="text-center"><p>3</p></td>
+<td class="text-center"><p>1.4</p></td>
+<td class="text-right"><p>0.2 Iris-setosa</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>2</p></td>
+<td class="text-center"><p>4.7</p></td>
+<td class="text-center"><p>3.2</p></td>
+<td class="text-center"><p>1.3</p></td>
+<td class="text-right"><p>0.2 Iris-setosa</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>3</p></td>
+<td class="text-center"><p>4.6</p></td>
+<td class="text-center"><p>3.1</p></td>
+<td class="text-center"><p>1.5</p></td>
+<td class="text-right"><p>0.2 Iris-setosa</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>4</p></td>
+<td class="text-center"><p>5</p></td>
+<td class="text-center"><p>3.6</p></td>
+<td class="text-center"><p>1.4</p></td>
+<td class="text-right"><p>0.2 Iris-setosa</p></td>
+</tr>
+</tbody>
+</table>
 </div>
+</section>
+</section>
+<section id="statistik-deskriptif">
+<h2>3. Statistik Deskriptif<a class="headerlink" href="#statistik-deskriptif" title="Permalink to this heading">#</a></h2>
+<p>Statistik deskriptif digunakan untuk mengetahui gambaran umum data
+seperti mean, minimum, maksimum, dan standar deviasi.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p></p></th>
+<th class="head text-center"><p>sepal_length</p></th>
+<th class="head text-center"><p>sepal_width</p></th>
+<th class="head text-center"><p>petal_length</p></th>
+<th class="head text-right"><p>petal_width</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>count</p></td>
+<td class="text-center"><p>150</p></td>
+<td class="text-center"><p>150</p></td>
+<td class="text-center"><p>150</p></td>
+<td class="text-right"><p>150</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>mean</p></td>
+<td class="text-center"><p>5.84333</p></td>
+<td class="text-center"><p>3.054</p></td>
+<td class="text-center"><p>3.75867</p></td>
+<td class="text-right"><p>1.19867</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>std</p></td>
+<td class="text-center"><p>0.828066</p></td>
+<td class="text-center"><p>0.433594</p></td>
+<td class="text-center"><p>1.76442</p></td>
+<td class="text-right"><p>0.763161</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>min</p></td>
+<td class="text-center"><p>4.3</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-right"><p>0.1</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>25%</p></td>
+<td class="text-center"><p>5.1</p></td>
+<td class="text-center"><p>2.8</p></td>
+<td class="text-center"><p>1.6</p></td>
+<td class="text-right"><p>0.3</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>50%</p></td>
+<td class="text-center"><p>5.8</p></td>
+<td class="text-center"><p>3</p></td>
+<td class="text-center"><p>4.35</p></td>
+<td class="text-right"><p>1.3</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>75%</p></td>
+<td class="text-center"><p>6.4</p></td>
+<td class="text-center"><p>3.3</p></td>
+<td class="text-center"><p>5.1</p></td>
+<td class="text-right"><p>1.8</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>max</p></td>
+<td class="text-center"><p>7.9</p></td>
+<td class="text-center"><p>4.4</p></td>
+<td class="text-center"><p>6.9</p></td>
+<td class="text-right"><p>2.5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="analisis-awal">
+<h2>4. Analisis Awal<a class="headerlink" href="#analisis-awal" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Rata-rata sepal_length: 5.84</p></li>
+<li><p>Rata-rata sepal_width: 3.05</p></li>
+<li><p>Rata-rata petal_length: 3.76</p></li>
+<li><p>Rata-rata petal_width: 1.20</p></li>
+</ul>
+<p>Dari hasil tersebut terlihat bahwa petal_length memiliki variasi nilai
+yang cukup besar dibandingkan fitur lainnya, sehingga fitur ini
+berpotensi baik untuk membedakan spesies bunga.</p>
+</section>
+<section id="kesimpulan">
+<h2>5. Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Dataset Iris memiliki 150 data tanpa missing value.</p></li>
+<li><p>Semua fitur numerik memiliki distribusi yang cukup baik.</p></li>
+<li><p>Petal length dan petal width memiliki variasi paling besar dan berpotensi menjadi fitur penting dalam proses klasifikasi.</p></li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -444,14 +582,14 @@ Penambangan data merupakan bagian krusial dari Business Intelligence untuk menda
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
+    <a class="left-prev"
        href="pertemuan_1.html"
-       title="next page">
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">pertemuan 1</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -469,10 +607,16 @@ Penambangan data merupakan bagian krusial dari Business Intelligence untuk menda
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Biodata Diri</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penambangan-data-data-mining">PENAMBANGAN DATA (Data Mining)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">1. Pendahuluan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-exploratory-data-analysis">2. Eksplorasi Data (Exploratory Data Analysis)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-data">2.1 Struktur Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lima-data-pertama">2.2 Lima Data Pertama</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif">3. Statistik Deskriptif</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-awal">4. Analisis Awal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">5. Kesimpulan</a></li>
+</ul>
   </nav></div>
 
 </div></div>
