@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Analisis Deskriptif Data Iris &#8212; PENAMBANGAN DATA A</title>
+    <title>Data Collection &#8212; PENAMBANGAN DATA A</title>
   
   
   
@@ -65,6 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Data_Deskriptif_Iris';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Histogram" href="Visualisasi_data_Iris.html" />
     <link rel="prev" title="Eksplorasi Data Iris" href="eksplorasidata.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -175,7 +176,11 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="pertemuan_1.html">pertemuan 1</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="eksplorasidata.html">Eksplorasi Data Iris</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Analisis Deskriptif Data Iris</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Data Collection</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Visualisasi_data_Iris.html">Histogram</a></li>
+
+
 </ul>
 </details></li>
 </ul>
@@ -363,7 +368,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Analisis Deskriptif Data Iris</h1>
+    <h1>Data Collection</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -373,9 +378,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Collection</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-data-collection">Tujuan Data Collection</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informasi-dataset">Informasi Dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif">Statistik Deskriptif</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -386,9 +396,21 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="analisis-deskriptif-data-iris">
-<h1>Analisis Deskriptif Data Iris<a class="headerlink" href="#analisis-deskriptif-data-iris" title="Permalink to this heading">#</a></h1>
-<p>Notebook ini berisi analisis statistik deskriptif dari dataset Iris.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-collection">
+<h1>Data Collection<a class="headerlink" href="#data-collection" title="Permalink to this heading">#</a></h1>
+<p>Langkah pertama dalam Data Understanding adalah pengumpulan data (data collection). Pada tahap ini, data dikumpulkan dari berbagai sumber yang relevan, seperti database, file CSV atau Excel, API, maupun sistem internal organisasi. Maksud dari langkah ini adalah memastikan bahwa data yang digunakan sesuai dengan tujuan penelitian, lengkap, dan representatif terhadap permasalahan yang akan dianalisis. Tanpa proses pengumpulan yang tepat, hasil analisis berisiko tidak relevan dengan kebutuhan penelitian.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="tujuan-data-collection">
+<h1>Tujuan Data Collection<a class="headerlink" href="#tujuan-data-collection" title="Permalink to this heading">#</a></h1>
+<p>Berikut adalah tujuan Data Collection:</p>
+<ol class="arabic simple">
+<li><p>Memperoleh data yang relevan dengan permasalahan atau tujuan penelitian.</p></li>
+<li><p>Mengumpulkan data dari sumber yang terpercaya, seperti database, file CSV/Excel, API, atau sistem internal.</p></li>
+<li><p>Memastikan kelengkapan data, baik dari segi jumlah sampel maupun variabel yang dibutuhkan.</p></li>
+<li><p>Menjamin data bersifat representatif, sehingga dapat menggambarkan kondisi sebenarnya.</p></li>
+<li><p>Mendukung proses analisis selanjutnya, agar tahap deskripsi, eksplorasi, dan pemodelan dapat dilakukan dengan tepat.</p></li>
+<li><p>Mengurangi risiko kesalahan analisis, karena data yang digunakan sudah sesuai dengan kebutuhan dan tujuan penelitian.</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -627,6 +649,59 @@ memory usage: 6.0+ KB
 </table>
 </div></div></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="s1">&#39;data_orange.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/365a882cafb860cfff69be63aa5a046094d79160f340f10f1d8ef87307402393.png" src="_images/365a882cafb860cfff69be63aa5a046094d79160f340f10f1d8ef87307402393.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../IRIS.csv&quot;</span><span class="p">)</span>
+<span class="n">kolom</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah data        :&quot;</span><span class="p">,</span> <span class="n">kolom</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rata-rata          :&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">kolom</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nilai minimal      :&quot;</span><span class="p">,</span> <span class="n">kolom</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Q1                 :&quot;</span><span class="p">,</span> <span class="n">kolom</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Q2 (Median)        :&quot;</span><span class="p">,</span> <span class="n">kolom</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Q3                 :&quot;</span><span class="p">,</span> <span class="n">kolom</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nilai maksimal     :&quot;</span><span class="p">,</span> <span class="n">kolom</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kemencengan (skew) :&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">kolom</span><span class="o">.</span><span class="n">skew</span><span class="p">(),</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="n">mode</span> <span class="o">=</span> <span class="n">kolom</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nilai modus        :&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah modus       :&quot;</span><span class="p">,</span> <span class="n">kolom</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="n">mode</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Standar deviasi    :&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">kolom</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Variansi           :&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">kolom</span><span class="o">.</span><span class="n">var</span><span class="p">(),</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah data        : 150
+Rata-rata          : 3.05
+Nilai minimal      : 2.0
+Q1                 : 2.8
+Q2 (Median)        : 3.0
+Q3                 : 3.3
+Nilai maksimal     : 4.4
+Kemencengan (skew) : 0.33
+Nilai modus        : 3.0
+Jumlah modus       : 26
+Standar deviasi    : 0.43
+Variansi           : 0.19
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -669,6 +744,15 @@ memory usage: 6.0+ KB
         <p class="prev-next-title">Eksplorasi Data Iris</p>
       </div>
     </a>
+    <a class="right-next"
+       href="Visualisasi_data_Iris.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Histogram</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -685,9 +769,14 @@ memory usage: 6.0+ KB
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Collection</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-data-collection">Tujuan Data Collection</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informasi-dataset">Informasi Dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif">Statistik Deskriptif</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
