@@ -3,7 +3,7 @@
 - Nama Lengkap: Verdi Setyawan Ardiansyah Putra
 - Nim: 240411100100
 - Kelas: Penambangan Data A
-- Email: Verdi Setiawan Ardiansyah Putra
+- Email: setiawanferdi622@gmail.com
 - Program studi: Teknik Informatika
 
 # PENAMBANGAN DATA (Data Mining)
