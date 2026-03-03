@@ -1,37 +1,31 @@
 # Eksplorasi Data Iris
 
-## 1. Pendahuluan
+Dataset yang digunakan adalah Iris Flower Dataset yang berisi 150 data bunga dengan 4 fitur numerik (sepal_length, sepal_width, petal_length, petal_width) dan 1 fitur kategorikal (species). Dataset ini sering digunakan dalam analisis data dan machine learning untuk klasifikasi.
 
-Dataset yang digunakan adalah dataset Iris yang berisi 150 data bunga
-dengan 4 fitur numerik (sepal_length, sepal_width, petal_length,
-petal_width) dan 1 fitur kategorikal (species). Dataset ini sering
-digunakan dalam analisis data dan machine learning untuk klasifikasi.
-
-## 2. Eksplorasi Data (Exploratory Data Analysis)
-
-### 2.1 Struktur Data
+## 1 Struktur Data
 
 -   Jumlah Baris: 150
 -   Jumlah Kolom: 5
--   Tidak terdapat missing value pada dataset.
+-   Dataset asli tidak memiliki missing value.
 -   Tipe Data:
     -   4 kolom bertipe float (numerik)
     -   1 kolom bertipe object (kategori/species)
 
-### 2.2 Lima Data Pertama
+Untuk keperluan pembelajaran, dilakukan simulasi penambahan missing value pada beberapa kolom numerik untuk dianalisis dan ditangani.
 
-|sepal_length|sepal_width|petal_length|petal_width|species|
-|:-----------|:---------:|:----------:|:---------:|------:|
-|0|5.1|3.5|1.4|0.2 Iris-setosa|
-|1|4.9|3  |1.4|0.2 Iris-setosa|
-|2|4.7|3.2|1.3|0.2 Iris-setosa|
-|3|4.6|3.1|1.5|0.2 Iris-setosa|
-|4|5  |3.6|1.4|0.2 Iris-setosa|
+## 2 Lima Data Pertama
+
+|N0|sepal_length|sepal_width|petal_length|petal_width|species|
+|:-----------|:-----------|:---------:|:----------:|:---------:|------:|
+|1|5.1|3.5|1.4|0.2|Iris-setosa|
+|2|4.9|3  |1.4|0.2|Iris-setosa|
+|3|4.7|3.2|1.3|0.2|Iris-setosa|
+|4|4.6|3.1|1.5|0.2|Iris-setosa|
+|5|5  |3.6|1.4|0.2|Iris-setosa|
 
 ## 3. Statistik Deskriptif
 
-Statistik deskriptif digunakan untuk mengetahui gambaran umum data
-seperti mean, minimum, maksimum, dan standar deviasi.
+Statistik deskriptif digunakan untuk mengetahui gambaran umum data seperti mean, minimum, maksimum, dan standar deviasi.
 
 ||sepal_length|sepal_width|petal_length|petal_width|
 |:----|:------:|:------:|:-----:|-------:|
@@ -51,12 +45,38 @@ seperti mean, minimum, maksimum, dan standar deviasi.
 -   Rata-rata petal_length: 3.76
 -   Rata-rata petal_width: 1.20
 
-Dari hasil tersebut terlihat bahwa petal_length memiliki variasi nilai
-yang cukup besar dibandingkan fitur lainnya, sehingga fitur ini
-berpotensi baik untuk membedakan spesies bunga.
+Dari hasil tersebut terlihat bahwa petal_length memiliki variasi nilai yang cukup besar dibandingkan fitur lainnya, sehingga fitur ini berpotensi baik untuk membedakan spesies bunga.
 
-## 5. Kesimpulan
+## 5. Deteksi Outlier
 
-1.  Dataset Iris memiliki 150 data tanpa missing value.
-2.  Semua fitur numerik memiliki distribusi yang cukup baik.
-3.  Petal length dan petal width memiliki variasi paling besar dan berpotensi menjadi fitur penting dalam proses klasifikasi.
+Deteksi outlier dilakukan menggunakan metode Local Outlier Factor.
+
+Metode LOF mengukur kepadatan lokal suatu data dibandingkan dengan kepadatan tetangga terdekatnya. Data dengan kepadatan jauh lebih rendah dibandingkan sekitarnya akan dikategorikan sebagai outlier.
+
+Parameter yang digunakan:
+
+- n_neighbors = 20
+- contamination = 0.10
+- metric = euclidean
+
+Hasil analisis menunjukkan terdapat sejumlah data yang terdeteksi sebagai outlier berdasarkan nilai kepadatan lokalnya. Outlier ini berpotensi mempengaruhi hasil analisis lanjutan seperti clustering atau perhitungan jarak.
+
+## 6. Penambahan dan Penanganan Missing Value
+
+Dataset Iris asli tidak memiliki missing value. Namun, untuk tujuan analisis dilakukan simulasi penambahan nilai kosong (NaN) pada beberapa kolom numerik.
+
+Setelah dilakukan pengecekan, missing value ditangani menggunakan metode imputasi mean (rata-rata kolom). Metode ini dipilih karena:
+
+- Data bersifat numerik
+- Distribusi relatif stabil
+- Tidak mengubah pola data secara signifikan
+
+Tahap ini merupakan bagian dari proses data preparation dalam metodologi CRISP-DM.
+
+## 7. Kesimpulan
+
+1. Dataset Iris terdiri dari 150 data dengan 4 fitur numerik dan 1 fitur kategorikal.
+2. Statistik deskriptif menunjukkan distribusi data yang cukup baik.
+3. Deteksi menggunakan LOF menunjukkan adanya data yang terindikasi sebagai outlier.
+4. Simulasi missing value dan proses imputasi dilakukan sebagai bagian dari data preparation.
+5. Petal length dan petal width memiliki variasi paling besar dan berpotensi menjadi fitur penting dalam proses klasifikasi.
