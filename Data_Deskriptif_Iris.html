@@ -384,6 +384,9 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-data-collection">Tujuan Data Collection</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informasi-dataset">Informasi Dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif">Statistik Deskriptif</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-value">Missing Value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-euclidean">Jarak Euclidean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-matrix">Distance Matrix</a></li>
 </ul>
 </li>
 </ul>
@@ -645,6 +648,9 @@ memory usage: 6.0+ KB
 </table>
 </div></div></div>
 </div>
+</section>
+<section id="missing-value">
+<h2>Missing Value<a class="headerlink" href="#missing-value" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -696,11 +702,13 @@ dtype: int64
 </div>
 </div>
 </div>
+</section>
+<section id="jarak-euclidean">
+<h2>Jarak Euclidean<a class="headerlink" href="#jarak-euclidean" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.spatial.distance</span><span class="w"> </span><span class="kn">import</span> <span class="n">euclidean</span>
 
-<span class="c1"># Ambil 2 data pertama (hanya fitur numerik)</span>
 <span class="n">data1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">data2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
 
@@ -716,6 +724,7 @@ dtype: int64
 </div>
 </div>
 </div>
+<p>Jarak Euclidean digunakan untuk mengukur tingkat kemiripan antar data berdasarkan fitur numerik. Semakin kecil nilai jarak, semakin mirip dua data tersebut.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.spatial.distance</span><span class="w"> </span><span class="kn">import</span> <span class="n">pdist</span><span class="p">,</span> <span class="n">squareform</span>
@@ -734,7 +743,9 @@ dtype: int64
 </div>
 </div>
 </div>
-<p>Jarak Euclidean digunakan untuk mengukur tingkat kemiripan antar data berdasarkan fitur numerik. Semakin kecil nilai jarak, semakin mirip dua data tersebut.</p>
+</section>
+<section id="distance-matrix">
+<h2>Distance Matrix<a class="headerlink" href="#distance-matrix" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -1062,6 +1073,9 @@ Variansi           : 0.19
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-data-collection">Tujuan Data Collection</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informasi-dataset">Informasi Dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif">Statistik Deskriptif</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-value">Missing Value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-euclidean">Jarak Euclidean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-matrix">Distance Matrix</a></li>
 </ul>
 </li>
 </ul>
