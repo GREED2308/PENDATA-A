@@ -1,0 +1,1960 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Pengukuran Jarak Data Mahasiswa &#8212; PENAMBANGAN DATA A</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'jarak_pelatihan';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Histogram" href="Visualisasi_data_Iris.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/Logo.jpeg" class="logo__image only-light" alt="PENAMBANGAN DATA A - Home"/>
+    <script>document.write(`<img src="_static/Logo.jpeg" class="logo__image only-dark" alt="PENAMBANGAN DATA A - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Biodata Diri
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pertemuan_1.html">pertemuan 1</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="pengukuran_jarak.html">Mengukur Jarak</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="eksplorasidata.html">Eksplorasi Data Iris</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data_Deskriptif_Iris.html">Dataset Penelitian</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="Visualisasi_data_Iris.html">Histogram</a></li>
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Pengukuran Jarak Data Mahasiswa</a></li>
+
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fjarak_pelatihan.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/jarak_pelatihan.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pengukuran Jarak Data Mahasiswa</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pengukuran Jarak Data Mahasiswa</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pengukuran-jarak">Pengukuran Jarak</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-dataset">Deskripsi Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikasi-tipe-data">Klasifikasi Tipe Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-klasifikasi-tipe-data">Ringkasan Klasifikasi Tipe Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-konversi">Normalisasi/Konversi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konversi-atribut-binary">Konversi Atribut Binary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Klasifikasi Tipe Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-missing-value">Analisis Missing Value</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-data">Transformasi Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-data-ordinal">Encoding Data Ordinal</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pengukuran-atribut-ordinal">Pengukuran Atribut Ordinal</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data-numerik">Normalisasi Data Numerik</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-jarak-menggunakan-gower-distance">Perhitungan Jarak Menggunakan Gower Distance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-gower-distance">Menghitung Gower Distance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi-heatmap">Interpretasi Heatmap</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pengukuran-jarak-data-mahasiswa">
+<h1>Pengukuran Jarak Data Mahasiswa<a class="headerlink" href="#pengukuran-jarak-data-mahasiswa" title="Permalink to this heading">#</a></h1>
+<p>Dataset ini merupakan dataset yang berisi data mahasiswa dengan beberapa atribut yang berbeda tipe data. Setiap baris merepresentasikan satu mahasiswa yang mencakup informasi umur, IPK, tingkat stres, metode belajar, serta informasi keikutsertaan organisasi dan akses internet. Dataset ini digunakan untuk mempelajari pengukuran jarak pada data campuran (mixed data).</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pengukuran-jarak">
+<h1>Pengukuran Jarak<a class="headerlink" href="#pengukuran-jarak" title="Permalink to this heading">#</a></h1>
+<section id="deskripsi-dataset">
+<h2>Deskripsi Dataset<a class="headerlink" href="#deskripsi-dataset" title="Permalink to this heading">#</a></h2>
+<p>Dataset yang digunakan dalam praktikum ini adalah dataset mahasiswa yang berisi informasi mengenai karakteristik mahasiswa seperti umur, IPK, tingkat stres, metode belajar, serta aktivitas organisasi. Dataset ini digunakan untuk melakukan analisis pengukuran jarak antar objek dengan tipe data campuran (mixed data types), yaitu numerik, ordinal, kategorikal, dan binary. Jumlah data dalam dataset ini adalah <strong>100 baris</strong> dengan <strong>7 atribut</strong>.</p>
+</section>
+<section id="klasifikasi-tipe-data">
+<h2>Klasifikasi Tipe Data<a class="headerlink" href="#klasifikasi-tipe-data" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>Kolom</p></th>
+<th class="head"><p>Tipe Data</p></th>
+<th class="head"><p>Penjelasan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>id</p></td>
+<td><p>Numerik (Identifier)</p></td>
+<td><p>Nomor identitas data mahasiswa</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>umur</p></td>
+<td><p>Numerik</p></td>
+<td><p>Umur mahasiswa</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>ipk</p></td>
+<td><p>Numerik</p></td>
+<td><p>Indeks Prestasi Kumulatif</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>tingkat_stres</p></td>
+<td><p>Ordinal</p></td>
+<td><p>Tingkatan stres (rendah &lt; sedang &lt; tinggi)</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>metode_belajar</p></td>
+<td><p>Kategorikal</p></td>
+<td><p>visual, audio, praktik</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>ikut_organisasi</p></td>
+<td><p>Binary</p></td>
+<td><p>1 = ikut organisasi, 0 = tidak</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>akses_internet</p></td>
+<td><p>Binary</p></td>
+<td><p>1 = memiliki akses internet, 0 = tidak</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="ringkasan-klasifikasi-tipe-data">
+<h3>Ringkasan Klasifikasi Tipe Data<a class="headerlink" href="#ringkasan-klasifikasi-tipe-data" title="Permalink to this heading">#</a></h3>
+<p>Numerik : umur, ipk<br />
+Ordinal : tingkat_stres<br />
+Kategorikal : metode_belajar<br />
+Binary : ikut_organisasi, akses_internet</p>
+</section>
+</section>
+<section id="normalisasi-konversi">
+<h2>Normalisasi/Konversi<a class="headerlink" href="#normalisasi-konversi" title="Permalink to this heading">#</a></h2>
+<section id="konversi-atribut-binary">
+<h3>Konversi Atribut Binary<a class="headerlink" href="#konversi-atribut-binary" title="Permalink to this heading">#</a></h3>
+<p>Atribut binary sudah direpresentasikan dalam bentuk angka.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Atribut</p></th>
+<th class="head"><p>Nilai</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ikut_organisasi</p></td>
+<td><p>1 = Ya, 0 = Tidak</p></td>
+</tr>
+<tr class="row-odd"><td><p>akses_internet</p></td>
+<td><p>1 = Ada, 0 = Tidak</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Contoh Data :</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>id</p></th>
+<th class="head"><p>umur</p></th>
+<th class="head"><p>ipk</p></th>
+<th class="head"><p>tingkat_stres</p></th>
+<th class="head"><p>metode_belajar</p></th>
+<th class="head"><p>ikut_organisasi</p></th>
+<th class="head"><p>akses_internet</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>20</p></td>
+<td><p>3.4</p></td>
+<td><p>sedang</p></td>
+<td><p>visual</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>21</p></td>
+<td><p>3.1</p></td>
+<td><p>tinggi</p></td>
+<td><p>audio</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>19</p></td>
+<td><p>3.7</p></td>
+<td><p>rendah</p></td>
+<td><p>praktik</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>22</p></td>
+<td><p>2.9</p></td>
+<td><p>tinggi</p></td>
+<td><p>visual</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data_mahasiswa.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>umur</th>
+      <th>ipk</th>
+      <th>tingkat_stres</th>
+      <th>metode_belajar</th>
+      <th>ikut_organisasi</th>
+      <th>akses_internet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>20</td>
+      <td>3.4</td>
+      <td>sedang</td>
+      <td>visual</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>21</td>
+      <td>3.1</td>
+      <td>tinggi</td>
+      <td>audio</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>19</td>
+      <td>3.7</td>
+      <td>rendah</td>
+      <td>praktik</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>22</td>
+      <td>2.9</td>
+      <td>tinggi</td>
+      <td>visual</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>20</td>
+      <td>3.5</td>
+      <td>sedang</td>
+      <td>audio</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>96</td>
+      <td>20</td>
+      <td>3.8</td>
+      <td>rendah</td>
+      <td>praktik</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>97</td>
+      <td>23</td>
+      <td>2.6</td>
+      <td>tinggi</td>
+      <td>audio</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>98</td>
+      <td>21</td>
+      <td>3.4</td>
+      <td>sedang</td>
+      <td>visual</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>99</td>
+      <td>19</td>
+      <td>3.7</td>
+      <td>rendah</td>
+      <td>praktik</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>100</td>
+      <td>22</td>
+      <td>3.2</td>
+      <td>sedang</td>
+      <td>audio</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>100 rows × 7 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data_mahasiswa.csv&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah Data :&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah Kolom :&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Data : 100
+Jumlah Kolom : 7
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>umur</th>
+      <th>ipk</th>
+      <th>ikut_organisasi</th>
+      <th>akses_internet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>50.500000</td>
+      <td>20.940000</td>
+      <td>3.311000</td>
+      <td>0.520000</td>
+      <td>0.800000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>29.011492</td>
+      <td>1.293496</td>
+      <td>0.387662</td>
+      <td>0.502117</td>
+      <td>0.402015</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>19.000000</td>
+      <td>2.600000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>25.750000</td>
+      <td>20.000000</td>
+      <td>3.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>50.500000</td>
+      <td>21.000000</td>
+      <td>3.300000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>75.250000</td>
+      <td>22.000000</td>
+      <td>3.700000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>100.000000</td>
+      <td>23.000000</td>
+      <td>3.900000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 100 entries, 0 to 99
+Data columns (total 7 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   id               100 non-null    int64  
+ 1   umur             100 non-null    int64  
+ 2   ipk              100 non-null    float64
+ 3   tingkat_stres    100 non-null    object 
+ 4   metode_belajar   100 non-null    object 
+ 5   ikut_organisasi  100 non-null    int64  
+ 6   akses_internet   100 non-null    int64  
+dtypes: float64(1), int64(4), object(2)
+memory usage: 5.6+ KB
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id1">
+<h2>Klasifikasi Tipe Data<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Dataset ini memiliki tipe data campuran yang terdiri dari:</p>
+<ul class="simple">
+<li><p><strong>Numerik:</strong> umur, ipk</p></li>
+<li><p><strong>Ordinal:</strong> tingkat_stres</p></li>
+<li><p><strong>Kategorikal (Nominal):</strong> metode_belajar</p></li>
+<li><p><strong>Binary:</strong> ikut_organisasi, akses_internet</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id                 0
+umur               0
+ipk                0
+tingkat_stres      0
+metode_belajar     0
+ikut_organisasi    0
+akses_internet     0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<section id="analisis-missing-value">
+<h3>Analisis Missing Value<a class="headerlink" href="#analisis-missing-value" title="Permalink to this heading">#</a></h3>
+<p>Berdasarkan hasil pemeriksaan menggunakan fungsi <code class="docutils literal notranslate"><span class="pre">isnull().sum()</span></code>, tidak ditemukan nilai kosong pada dataset. Seluruh atribut memiliki jumlah data yang lengkap sehingga tidak diperlukan proses imputasi data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stress_map</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;rendah&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;sedang&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
+    <span class="s2">&quot;tinggi&quot;</span><span class="p">:</span><span class="mi">3</span>
+<span class="p">}</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;tingkat_stres&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;tingkat_stres&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">stress_map</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>umur</th>
+      <th>ipk</th>
+      <th>tingkat_stres</th>
+      <th>metode_belajar</th>
+      <th>ikut_organisasi</th>
+      <th>akses_internet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>20</td>
+      <td>3.4</td>
+      <td>2</td>
+      <td>visual</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>21</td>
+      <td>3.1</td>
+      <td>3</td>
+      <td>audio</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>19</td>
+      <td>3.7</td>
+      <td>1</td>
+      <td>praktik</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>22</td>
+      <td>2.9</td>
+      <td>3</td>
+      <td>visual</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>20</td>
+      <td>3.5</td>
+      <td>2</td>
+      <td>audio</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="transformasi-data">
+<h2>Transformasi Data<a class="headerlink" href="#transformasi-data" title="Permalink to this heading">#</a></h2>
+<p>Sebelum dilakukan perhitungan jarak, beberapa atribut perlu ditransformasikan ke dalam bentuk numerik.</p>
+<p>Transformasi dilakukan sebagai berikut:</p>
+<ul class="simple">
+<li><p>Data ordinal diubah menjadi angka berdasarkan urutan tingkatannya.</p></li>
+<li><p>Data kategorikal dapat dilakukan encoding jika diperlukan.</p></li>
+<li><p>Data numerik dinormalisasi menggunakan metode Min-Max agar memiliki rentang nilai yang sama.</p></li>
+</ul>
+<section id="encoding-data-ordinal">
+<h3>Encoding Data Ordinal<a class="headerlink" href="#encoding-data-ordinal" title="Permalink to this heading">#</a></h3>
+<section id="pengukuran-atribut-ordinal">
+<h4>Pengukuran Atribut Ordinal<a class="headerlink" href="#pengukuran-atribut-ordinal" title="Permalink to this heading">#</a></h4>
+<p>Atribut <code class="docutils literal notranslate"><span class="pre">tingkat_stres</span></code> merupakan data ordinal yang memiliki urutan sebagai berikut:
+rendah &lt; sedang &lt; tinggi</p>
+<p>Oleh karena itu dilakukan konversi menjadi nilai numerik:</p>
+<ul class="simple">
+<li><p>rendah = 1</p></li>
+<li><p>sedang = 2</p></li>
+<li><p>tinggi = 3</p></li>
+</ul>
+<p>Nilai tingkat_stres:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>tingkat_stres</p></th>
+<th class="head"><p>Rank</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>rendah</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>sedang</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>tinggi</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Normalisasi:</p>
+<div class="math notranslate nohighlight">
+\[
+z = \frac{rank - 1}{m - 1}
+\]</div>
+<p>Contoh Normalisasi Rank:</p>
+<p>sedang = 2
+tinggi = 3</p>
+<div class="math notranslate nohighlight">
+\[
+z_{sedang} = \frac{2 - 1}{3 - 1} = 0.5
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+z_{tinggi} = \frac{3 - 1}{3 - 1} = 1
+\]</div>
+<p>Jadi jarak ordinal antara 2 rank diatas:</p>
+<div class="math notranslate nohighlight">
+\[
+d = |0.5 - 1| = 0.5
+\]</div>
+<p>Contoh Hasil :</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>id</p></th>
+<th class="head"><p>tingkat_stres</p></th>
+<th class="head"><p>nilai ordinal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>sedang</p></td>
+<td><p>0.50</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>tinggi</p></td>
+<td><p>1.00</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>rendah</p></td>
+<td><p>0.00</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>tinggi</p></td>
+<td><p>1.00</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>sedang</p></td>
+<td><p>0.50</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>tinggi</p></td>
+<td><p>1.00</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>sedang</p></td>
+<td><p>0.50</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>rendah</p></td>
+<td><p>0.00</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="normalisasi-data-numerik">
+<h3>Normalisasi Data Numerik<a class="headerlink" href="#normalisasi-data-numerik" title="Permalink to this heading">#</a></h3>
+<p>Normalisasi dilakukan untuk menghindari dominasi atribut dengan skala besar.</p>
+<p>Metode yang digunakan adalah <strong>Min-Max Normalization</strong> dengan rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+x' = \frac{x - min(x)}{max(x) - min(x)}
+\]</div>
+<p>Normalisasi dilakukan pada atribut numerik yaitu:</p>
+<ul class="simple">
+<li><p>umur</p></li>
+<li><p>ipk</p></li>
+</ul>
+<p>Contoh:</p>
+<p>misal:</p>
+<ul class="simple">
+<li><p>min umur = 19</p></li>
+<li><p>max umur = 23</p></li>
+</ul>
+<p>jika:</p>
+<ul class="simple">
+<li><p>umur1 = 20</p></li>
+<li><p>umur2 = 21</p></li>
+</ul>
+<p>Normalisasi:</p>
+<div class="math notranslate nohighlight">
+\[
+\min(umur) = 19
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\max(umur) = 23
+\]</div>
+<p>Untuk data dengan nilai umur = 20</p>
+<div class="math notranslate nohighlight">
+\[
+umur_1 = \frac{20 - 19}{23 - 19} = 0.25
+\]</div>
+<p>Untuk data dengan nilai umur = 21</p>
+<div class="math notranslate nohighlight">
+\[
+umur_2 = \frac{21 - 19}{23 - 19} = 0.50
+\]</div>
+<p>Jadi, jarak dari 2 nilai umur:</p>
+<div class="math notranslate nohighlight">
+\[
+d = |0.25 - 0.50| = 0.25
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">MinMaxScaler</span>
+
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+
+<span class="n">df</span><span class="p">[[</span><span class="s2">&quot;umur&quot;</span><span class="p">,</span><span class="s2">&quot;ipk&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;umur&quot;</span><span class="p">,</span><span class="s2">&quot;ipk&quot;</span><span class="p">]])</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>umur</th>
+      <th>ipk</th>
+      <th>tingkat_stres</th>
+      <th>metode_belajar</th>
+      <th>ikut_organisasi</th>
+      <th>akses_internet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0.25</td>
+      <td>0.615385</td>
+      <td>2</td>
+      <td>visual</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>0.50</td>
+      <td>0.384615</td>
+      <td>3</td>
+      <td>audio</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>0.00</td>
+      <td>0.846154</td>
+      <td>1</td>
+      <td>praktik</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>0.75</td>
+      <td>0.230769</td>
+      <td>3</td>
+      <td>visual</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0.25</td>
+      <td>0.692308</td>
+      <td>2</td>
+      <td>audio</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">gower</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data_mahasiswa.csv&quot;</span><span class="p">)</span>
+<span class="n">distance_matrix</span> <span class="o">=</span> <span class="n">gower</span><span class="o">.</span><span class="n">gower_matrix</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]))</span>
+<span class="n">distance_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">distance_matrix</span><span class="p">)</span>
+
+<span class="n">distance_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>...</th>
+      <th>90</th>
+      <th>91</th>
+      <th>92</th>
+      <th>93</th>
+      <th>94</th>
+      <th>95</th>
+      <th>96</th>
+      <th>97</th>
+      <th>98</th>
+      <th>99</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.000000</td>
+      <td>0.580128</td>
+      <td>0.413462</td>
+      <td>0.480769</td>
+      <td>0.179487</td>
+      <td>0.881410</td>
+      <td>0.067308</td>
+      <td>0.551282</td>
+      <td>0.301282</td>
+      <td>0.400641</td>
+      <td>...</td>
+      <td>0.868590</td>
+      <td>0.012821</td>
+      <td>0.605769</td>
+      <td>0.262821</td>
+      <td>0.246795</td>
+      <td>0.384615</td>
+      <td>0.894231</td>
+      <td>0.041667</td>
+      <td>0.580128</td>
+      <td>0.275641</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.580128</td>
+      <td>0.000000</td>
+      <td>0.660256</td>
+      <td>0.233974</td>
+      <td>0.426282</td>
+      <td>0.467949</td>
+      <td>0.512820</td>
+      <td>0.464744</td>
+      <td>0.387821</td>
+      <td>0.480769</td>
+      <td>...</td>
+      <td>0.455128</td>
+      <td>0.592949</td>
+      <td>0.352564</td>
+      <td>0.567308</td>
+      <td>0.333333</td>
+      <td>0.631410</td>
+      <td>0.314103</td>
+      <td>0.538462</td>
+      <td>0.493590</td>
+      <td>0.387821</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.413462</td>
+      <td>0.660256</td>
+      <td>0.000000</td>
+      <td>0.727564</td>
+      <td>0.400641</td>
+      <td>0.794872</td>
+      <td>0.480769</td>
+      <td>0.221154</td>
+      <td>0.548077</td>
+      <td>0.346154</td>
+      <td>...</td>
+      <td>0.782051</td>
+      <td>0.400641</td>
+      <td>0.358974</td>
+      <td>0.342949</td>
+      <td>0.660256</td>
+      <td>0.054487</td>
+      <td>0.974359</td>
+      <td>0.455128</td>
+      <td>0.166667</td>
+      <td>0.522436</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.480769</td>
+      <td>0.233974</td>
+      <td>0.727564</td>
+      <td>0.000000</td>
+      <td>0.660256</td>
+      <td>0.400641</td>
+      <td>0.413462</td>
+      <td>0.532051</td>
+      <td>0.512820</td>
+      <td>0.381410</td>
+      <td>...</td>
+      <td>0.387821</td>
+      <td>0.493590</td>
+      <td>0.586538</td>
+      <td>0.551282</td>
+      <td>0.233974</td>
+      <td>0.698718</td>
+      <td>0.413462</td>
+      <td>0.439103</td>
+      <td>0.560897</td>
+      <td>0.538462</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.179487</td>
+      <td>0.426282</td>
+      <td>0.400641</td>
+      <td>0.660256</td>
+      <td>0.000000</td>
+      <td>0.894231</td>
+      <td>0.246795</td>
+      <td>0.538462</td>
+      <td>0.147436</td>
+      <td>0.554487</td>
+      <td>...</td>
+      <td>0.881410</td>
+      <td>0.166667</td>
+      <td>0.426282</td>
+      <td>0.275641</td>
+      <td>0.426282</td>
+      <td>0.371795</td>
+      <td>0.740385</td>
+      <td>0.221154</td>
+      <td>0.567308</td>
+      <td>0.121795</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 100 columns</p>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="perhitungan-jarak-menggunakan-gower-distance">
+<h2>Perhitungan Jarak Menggunakan Gower Distance<a class="headerlink" href="#perhitungan-jarak-menggunakan-gower-distance" title="Permalink to this heading">#</a></h2>
+<p>Karena dataset memiliki tipe data campuran, metode yang digunakan adalah <strong>Gower Distance</strong>.</p>
+<p>Gower Distance dapat menghitung jarak antar objek yang memiliki kombinasi data numerik, ordinal, kategorikal, dan binary.</p>
+<p>Rumus umum Gower Distance:</p>
+<div class="math notranslate nohighlight">
+\[
+d(i,j) = \frac{\sum s_{ijk}}{\sum w_{ijk}}
+\]</div>
+<section id="menghitung-gower-distance">
+<h3>Menghitung Gower Distance<a class="headerlink" href="#menghitung-gower-distance" title="Permalink to this heading">#</a></h3>
+<p>Setelah semua atribut dihitung, jarak total dihitung dengan Gower Distance.</p>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+D_{ij} = \frac{\sum_{k=1}^{p} d_{ijk}}{p}
+\]</div>
+<p>dengan:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(D_ij\)</span> = jarak antara objek i dan j</p></li>
+<li><p><span class="math notranslate nohighlight">\(d_ij\)</span> = jarak atribut ke-k antara objek i dan j</p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> = jumlah atribut</p></li>
+</ul>
+<p>Contoh Perhitungan</p>
+<p>jarak tiap atribut antara Data 1 dan Data 2 adalah:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>atribut</p></th>
+<th class="head"><p>jarak</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ikut_organisasi</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>akses_internet</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>metode_belajar</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>umur</p></td>
+<td><p>0.25</p></td>
+</tr>
+<tr class="row-even"><td><p>ipk</p></td>
+<td><p>0.23</p></td>
+</tr>
+<tr class="row-odd"><td><p>tingkat_stres</p></td>
+<td><p>0.5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Maka:</p>
+<div class="math notranslate nohighlight">
+\[
+D_{12} = \frac{1 + 0 + 1 + 0.25 + 0.23 + 0.5}{6}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+D_{12} = \frac{2.98}{6}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+D_{12} = 0.497
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">distance_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">distance_matrix</span><span class="p">)</span>
+<span class="n">distance_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>...</th>
+      <th>90</th>
+      <th>91</th>
+      <th>92</th>
+      <th>93</th>
+      <th>94</th>
+      <th>95</th>
+      <th>96</th>
+      <th>97</th>
+      <th>98</th>
+      <th>99</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.000000</td>
+      <td>0.580128</td>
+      <td>0.413462</td>
+      <td>0.480769</td>
+      <td>0.179487</td>
+      <td>0.881410</td>
+      <td>0.067308</td>
+      <td>0.551282</td>
+      <td>0.301282</td>
+      <td>0.400641</td>
+      <td>...</td>
+      <td>0.868590</td>
+      <td>0.012821</td>
+      <td>0.605769</td>
+      <td>0.262821</td>
+      <td>0.246795</td>
+      <td>0.384615</td>
+      <td>0.894231</td>
+      <td>0.041667</td>
+      <td>0.580128</td>
+      <td>0.275641</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.580128</td>
+      <td>0.000000</td>
+      <td>0.660256</td>
+      <td>0.233974</td>
+      <td>0.426282</td>
+      <td>0.467949</td>
+      <td>0.512820</td>
+      <td>0.464744</td>
+      <td>0.387821</td>
+      <td>0.480769</td>
+      <td>...</td>
+      <td>0.455128</td>
+      <td>0.592949</td>
+      <td>0.352564</td>
+      <td>0.567308</td>
+      <td>0.333333</td>
+      <td>0.631410</td>
+      <td>0.314103</td>
+      <td>0.538462</td>
+      <td>0.493590</td>
+      <td>0.387821</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.413462</td>
+      <td>0.660256</td>
+      <td>0.000000</td>
+      <td>0.727564</td>
+      <td>0.400641</td>
+      <td>0.794872</td>
+      <td>0.480769</td>
+      <td>0.221154</td>
+      <td>0.548077</td>
+      <td>0.346154</td>
+      <td>...</td>
+      <td>0.782051</td>
+      <td>0.400641</td>
+      <td>0.358974</td>
+      <td>0.342949</td>
+      <td>0.660256</td>
+      <td>0.054487</td>
+      <td>0.974359</td>
+      <td>0.455128</td>
+      <td>0.166667</td>
+      <td>0.522436</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.480769</td>
+      <td>0.233974</td>
+      <td>0.727564</td>
+      <td>0.000000</td>
+      <td>0.660256</td>
+      <td>0.400641</td>
+      <td>0.413462</td>
+      <td>0.532051</td>
+      <td>0.512820</td>
+      <td>0.381410</td>
+      <td>...</td>
+      <td>0.387821</td>
+      <td>0.493590</td>
+      <td>0.586538</td>
+      <td>0.551282</td>
+      <td>0.233974</td>
+      <td>0.698718</td>
+      <td>0.413462</td>
+      <td>0.439103</td>
+      <td>0.560897</td>
+      <td>0.538462</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.179487</td>
+      <td>0.426282</td>
+      <td>0.400641</td>
+      <td>0.660256</td>
+      <td>0.000000</td>
+      <td>0.894231</td>
+      <td>0.246795</td>
+      <td>0.538462</td>
+      <td>0.147436</td>
+      <td>0.554487</td>
+      <td>...</td>
+      <td>0.881410</td>
+      <td>0.166667</td>
+      <td>0.426282</td>
+      <td>0.275641</td>
+      <td>0.426282</td>
+      <td>0.371795</td>
+      <td>0.740385</td>
+      <td>0.221154</td>
+      <td>0.567308</td>
+      <td>0.121795</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.881410</td>
+      <td>0.467949</td>
+      <td>0.794872</td>
+      <td>0.400641</td>
+      <td>0.894231</td>
+      <td>0.000000</td>
+      <td>0.814103</td>
+      <td>0.599359</td>
+      <td>0.746795</td>
+      <td>0.782051</td>
+      <td>...</td>
+      <td>0.012821</td>
+      <td>0.894231</td>
+      <td>0.820513</td>
+      <td>0.618590</td>
+      <td>0.634615</td>
+      <td>0.766026</td>
+      <td>0.179487</td>
+      <td>0.839744</td>
+      <td>0.628205</td>
+      <td>0.772436</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.067308</td>
+      <td>0.512820</td>
+      <td>0.480769</td>
+      <td>0.413462</td>
+      <td>0.246795</td>
+      <td>0.814103</td>
+      <td>0.000000</td>
+      <td>0.618590</td>
+      <td>0.233974</td>
+      <td>0.467949</td>
+      <td>...</td>
+      <td>0.801282</td>
+      <td>0.080128</td>
+      <td>0.673077</td>
+      <td>0.221154</td>
+      <td>0.179487</td>
+      <td>0.451923</td>
+      <td>0.826923</td>
+      <td>0.025641</td>
+      <td>0.647436</td>
+      <td>0.208333</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.551282</td>
+      <td>0.464744</td>
+      <td>0.221154</td>
+      <td>0.532051</td>
+      <td>0.538462</td>
+      <td>0.599359</td>
+      <td>0.618590</td>
+      <td>0.000000</td>
+      <td>0.685897</td>
+      <td>0.233974</td>
+      <td>...</td>
+      <td>0.586538</td>
+      <td>0.538462</td>
+      <td>0.221154</td>
+      <td>0.480769</td>
+      <td>0.464744</td>
+      <td>0.166667</td>
+      <td>0.778846</td>
+      <td>0.592949</td>
+      <td>0.054487</td>
+      <td>0.660256</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.301282</td>
+      <td>0.387821</td>
+      <td>0.548077</td>
+      <td>0.512820</td>
+      <td>0.147436</td>
+      <td>0.746795</td>
+      <td>0.233974</td>
+      <td>0.685897</td>
+      <td>0.000000</td>
+      <td>0.701923</td>
+      <td>...</td>
+      <td>0.733974</td>
+      <td>0.314103</td>
+      <td>0.573718</td>
+      <td>0.205128</td>
+      <td>0.387821</td>
+      <td>0.519231</td>
+      <td>0.592949</td>
+      <td>0.259615</td>
+      <td>0.714744</td>
+      <td>0.025641</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.400641</td>
+      <td>0.480769</td>
+      <td>0.346154</td>
+      <td>0.381410</td>
+      <td>0.554487</td>
+      <td>0.782051</td>
+      <td>0.467949</td>
+      <td>0.233974</td>
+      <td>0.701923</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.769231</td>
+      <td>0.387821</td>
+      <td>0.205128</td>
+      <td>0.663462</td>
+      <td>0.314103</td>
+      <td>0.400641</td>
+      <td>0.794872</td>
+      <td>0.442308</td>
+      <td>0.179487</td>
+      <td>0.676282</td>
+    </tr>
+  </tbody>
+</table>
+<p>10 rows × 100 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">distance_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">10</span><span class="p">,:</span><span class="mi">10</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;coolwarm&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Heatmap Distance Matrix (10 Data Pertama)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6843fd82cc6c497f02bc6f0797bf212a30b5ff03eee055329d2346907a901fa8.png" src="_images/6843fd82cc6c497f02bc6f0797bf212a30b5ff03eee055329d2346907a901fa8.png" />
+</div>
+</div>
+</section>
+<section id="interpretasi-heatmap">
+<h3>Interpretasi Heatmap<a class="headerlink" href="#interpretasi-heatmap" title="Permalink to this heading">#</a></h3>
+<p>Heatmap menunjukkan tingkat kemiripan antar data mahasiswa.</p>
+<ul class="simple">
+<li><p>Warna biru menunjukkan jarak yang kecil (data lebih mirip)</p></li>
+<li><p>Warna merah menunjukkan jarak yang besar (data lebih berbeda)</p></li>
+</ul>
+</section>
+</section>
+<section id="kesimpulan">
+<h2>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permalink to this heading">#</a></h2>
+<p>Berdasarkan analisis yang dilakukan, dataset mahasiswa memiliki tipe data campuran yang terdiri dari numerik, ordinal, kategorikal, dan binary.</p>
+<p>Untuk menghitung jarak antar data digunakan metode <strong>Gower Distance</strong> yang mampu menangani tipe data campuran.</p>
+<p>Hasil perhitungan jarak disajikan dalam bentuk <strong>distance matrix</strong> yang menunjukkan tingkat kemiripan antar objek data.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Visualisasi_data_Iris.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Histogram</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pengukuran Jarak Data Mahasiswa</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pengukuran-jarak">Pengukuran Jarak</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-dataset">Deskripsi Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikasi-tipe-data">Klasifikasi Tipe Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-klasifikasi-tipe-data">Ringkasan Klasifikasi Tipe Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-konversi">Normalisasi/Konversi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konversi-atribut-binary">Konversi Atribut Binary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Klasifikasi Tipe Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-missing-value">Analisis Missing Value</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-data">Transformasi Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-data-ordinal">Encoding Data Ordinal</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pengukuran-atribut-ordinal">Pengukuran Atribut Ordinal</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data-numerik">Normalisasi Data Numerik</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-jarak-menggunakan-gower-distance">Perhitungan Jarak Menggunakan Gower Distance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-gower-distance">Menghitung Gower Distance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi-heatmap">Interpretasi Heatmap</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Verdi Setyawan Ardiansyah Putra
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
