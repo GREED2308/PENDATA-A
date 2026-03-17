@@ -706,12 +706,15 @@ s_6 &amp;= 0.8
 <li><p>Pembagi (<span class="math notranslate nohighlight">\(\sum s_i\)</span>): Digunakan untuk menormalisasi bobot sehingga hasil akhirnya tetap berada dalam skala yang wajar (rata-rata tertimbang).</p></li>
 </ul>
 <p>Rumus tersebut apabila diterapkan pada dataset diatas, maka akan didapatkan hasil sebagai berikut</p>
-<p>\begin{align*}
-\hat{y}_{ih} &amp;= \frac{(0 \times 4) + (1 \times 4) + (0 \times 0.8) + (1 \times 4) + (0 \times 4) + (1 \times 0.8)}{4 + 4 + 0.8 + 4 + 4 + 0.8} \
-&amp;= \frac{0 + 4 + 0 + 4 + 0 + 0.8}{17.6} \
-&amp;= \frac{8.8}{17.6} \
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\hat{y}_{ih} &amp;= \frac{(0 \times 4) + (1 \times 4) + (0 \times 0.8) + (1 \times 4) + (0 \times 4) + (1 \times 0.8)}{4 + 4 + 0.8 + 4 + 4 + 0.8} \\
+&amp;= \frac{0 + 4 + 0 + 4 + 0 + 0.8}{17.6} \\
+&amp;= \frac{8.8}{17.6} \\
 &amp;= 0.5
-\end{align*}</p>
+\end{align*}
+\end{split}\]</div>
 <p>Jadi nilai prediksi missing value menggunakan WKNN adalah <code class="docutils literal notranslate"><span class="pre">0.5</span></code>, perhitungan diatas apabila diterapkan pada Python akan menghasilkan sebagai berikut</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
