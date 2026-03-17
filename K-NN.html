@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Biodata Diri &#8212; PENAMBANGAN DATA A</title>
+    <title>K-Nearest Neighbors (K-NN) &#8212; PENAMBANGAN DATA A</title>
   
   
   
@@ -62,10 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'K-NN';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="pertemuan 1" href="pertemuan_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -148,7 +149,7 @@ const thebe_selector_output = ".output, .cell_output"
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -168,8 +169,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Biodata Diri
                 </a>
             </li>
@@ -265,7 +266,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FK-NN.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -295,7 +296,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/K-NN.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -379,7 +380,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Biodata Diri</h1>
+    <h1>K-Nearest Neighbors (K-NN)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -389,8 +390,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Biodata Diri</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penambangan-data-data-mining">PENAMBANGAN DATA (Data Mining)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">K-Nearest Neighbors (K-NN)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prinsip-dasar-k-nn">Prinsip Dasar K-NN</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#euclidean-distance">Euclidean Distance</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-manhattan">Jarak Manhattan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-minkowski">Jarak Minkowski</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-chebyshev">Jarak Chebyshev</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-cosine">Jarak Cosine</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-mahalanobis">Jarak Mahalanobis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prosedur-algoritma-k-nn">Prosedur Algoritma K-NN</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kelebihan-k-nn">Kelebihan K-NN</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kekurangan-k-nn">Kekurangan K-NN</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penerapan">Contoh Penerapan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 </ul>
 
             </nav>
@@ -403,30 +415,140 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="biodata-diri">
-<h1>Biodata Diri<a class="headerlink" href="#biodata-diri" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="k-nearest-neighbors-k-nn">
+<h1>K-Nearest Neighbors (K-NN)<a class="headerlink" href="#k-nearest-neighbors-k-nn" title="Permalink to this heading">#</a></h1>
+<p>K-Nearest Neighbors (K-NN) merupakan salah satu algoritma klasifikasi yang sangat populer dalam bidang <strong>machine learning</strong>, khususnya dalam kategori <strong>supervised learning</strong>. Algoritma ini pertama kali diperkenalkan oleh <strong>Evelyn Fix</strong> dan <strong>Joseph Hodges</strong> pada tahun 1951. K-NN bekerja dengan cara mengklasifikasikan suatu data baru berdasarkan kedekatan atau kemiripan dengan data lain yang sudah diketahui kelasnya dalam dataset.</p>
+<p>Prinsip utama dari algoritma ini adalah bahwa <strong>data yang memiliki karakteristik mirip akan cenderung berada pada kelas yang sama</strong>. Oleh karena itu, proses klasifikasi dilakukan dengan melihat sejumlah tetangga terdekat dari suatu data baru.</p>
+<p>Algoritma K-NN termasuk metode <strong>lazy learning</strong>, yaitu algoritma yang tidak membangun model secara eksplisit selama proses pelatihan. Sebaliknya, seluruh data pelatihan disimpan dan digunakan langsung ketika proses klasifikasi dilakukan.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="prinsip-dasar-k-nn">
+<h1>Prinsip Dasar K-NN<a class="headerlink" href="#prinsip-dasar-k-nn" title="Permalink to this heading">#</a></h1>
+<p>Prinsip dasar dari K-NN adalah memanfaatkan <strong>perhitungan jarak antar data</strong> untuk menentukan kelompok atau kelas suatu data baru.</p>
+<p>Ketika terdapat data baru yang belum diketahui kelasnya, algoritma K-NN akan:</p>
+<ol class="arabic simple">
+<li><p>Menghitung jarak antara data baru dengan seluruh data pada dataset pelatihan.</p></li>
+<li><p>Menentukan sejumlah tetangga terdekat berdasarkan nilai parameter <strong>k</strong>.</p></li>
+<li><p>Mengambil <strong>mayoritas kelas</strong> dari tetangga terdekat tersebut.</p></li>
+<li><p>Menetapkan kelas tersebut sebagai hasil klasifikasi data baru.</p></li>
+</ol>
+<p>Sebagai contoh, jika nilai <strong>k = 3</strong>, maka algoritma akan melihat <strong>3 data terdekat</strong> dari data baru dan menentukan kelas berdasarkan mayoritas dari ketiga data tersebut.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="euclidean-distance">
+<h1>Euclidean Distance<a class="headerlink" href="#euclidean-distance" title="Permalink to this heading">#</a></h1>
+<p>Euclidean Distance merupakan metode pengukuran jarak yang paling umum digunakan dalam algoritma K-NN. Metode ini menghitung jarak lurus antara dua titik dalam ruang multidimensi.</p>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
+\]</div>
+<p>Semakin kecil nilai jarak Euclidean antara dua data, maka semakin mirip kedua data tersebut.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="jarak-manhattan">
+<h1>Jarak Manhattan<a class="headerlink" href="#jarak-manhattan" title="Permalink to this heading">#</a></h1>
+<p>Jarak Manhattan adalah metode pengukuran jarak yang menghitung jarak antar titik dalam bentuk <strong>pergerakan horizontal dan vertikal</strong>, seperti jalur jalan pada kota berbentuk grid.</p>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+d(A,B) = \sum_{i=1}^{n} |x_i - y_i|
+\]</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="jarak-minkowski">
+<h1>Jarak Minkowski<a class="headerlink" href="#jarak-minkowski" title="Permalink to this heading">#</a></h1>
+<p>Jarak Minkowski merupakan generalisasi dari jarak Euclidean dan Manhattan.</p>
+<p>Jika:</p>
 <ul class="simple">
-<li><p>Nama Lengkap: Verdi Setyawan Ardiansyah Putra</p></li>
-<li><p>Nim: 240411100100</p></li>
-<li><p>Kelas: Penambangan Data A</p></li>
-<li><p>Email: <a class="reference external" href="mailto:setiawanferdi622&#37;&#52;&#48;gmail&#46;com">setiawanferdi622<span>&#64;</span>gmail<span>&#46;</span>com</a></p></li>
-<li><p>Program studi: Teknik Informatika</p></li>
+<li><p>p = 1 → Manhattan Distance</p></li>
+<li><p>p = 2 → Euclidean Distance</p></li>
+</ul>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+d(A,B) = \left( \sum_{i=1}^{n} |x_i - y_i|^p \right)^{1/p}
+\]</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="jarak-chebyshev">
+<h1>Jarak Chebyshev<a class="headerlink" href="#jarak-chebyshev" title="Permalink to this heading">#</a></h1>
+<p>Jarak Chebyshev digunakan untuk mengukur jarak maksimum antara dua titik pada salah satu dimensi koordinat.</p>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+d(A,B) = \max(|x_i - y_i|)
+\]</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="jarak-cosine">
+<h1>Jarak Cosine<a class="headerlink" href="#jarak-cosine" title="Permalink to this heading">#</a></h1>
+<p>Cosine Distance digunakan untuk mengukur <strong>kemiripan antara dua vektor</strong> terutama pada data berdimensi tinggi seperti dokumen teks.</p>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+d(A,B) =
+1 -
+\frac{\sum_{i=1}^{n} x_i y_i}
+{\sqrt{\sum_{i=1}^{n} x_i^2}
+\cdot
+\sqrt{\sum_{i=1}^{n} y_i^2}}
+\]</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="jarak-mahalanobis">
+<h1>Jarak Mahalanobis<a class="headerlink" href="#jarak-mahalanobis" title="Permalink to this heading">#</a></h1>
+<p>Mahalanobis Distance mempertimbangkan <strong>distribusi data dan korelasi antar variabel</strong>.</p>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+d(A,B) =
+\sqrt{(X - Y)^T S^{-1} (X - Y)}
+\]</div>
+<p>Dimana:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X\)</span> = vektor data pertama</p></li>
+<li><p><span class="math notranslate nohighlight">\(Y\)</span> = vektor data kedua</p></li>
+<li><p><span class="math notranslate nohighlight">\(S⁻¹\)</span> = invers matriks kovarians</p></li>
 </ul>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="penambangan-data-data-mining">
-<h1>PENAMBANGAN DATA (Data Mining)<a class="headerlink" href="#penambangan-data-data-mining" title="Permalink to this heading">#</a></h1>
-<p>Penambangan data (data mining) adalah proses otomatisasi untuk menemukan pola, tren, dan hubungan tersembunyi dalam set data besar menggunakan teknik statistik, matematika, dan machine learning. Teknik ini mengubah data mentah menjadi wawasan berharga (pengetahuan praktis) untuk memprediksi hasil masa depan, mengoptimalkan bisnis, dan meningkatkan pengambilan keputusan.</p>
-<p>Aspek Utama Penambangan Data:</p>
+<section class="tex2jax_ignore mathjax_ignore" id="prosedur-algoritma-k-nn">
+<h1>Prosedur Algoritma K-NN<a class="headerlink" href="#prosedur-algoritma-k-nn" title="Permalink to this heading">#</a></h1>
+<p>Langkah-langkah algoritma:</p>
+<ol class="arabic simple">
+<li><p>Tentukan nilai <strong>k</strong>.</p></li>
+<li><p>Hitung jarak data baru dengan seluruh data dataset.</p></li>
+<li><p>Urutkan jarak dari yang terkecil.</p></li>
+<li><p>Ambil <strong>k tetangga terdekat</strong>.</p></li>
+<li><p>Tentukan kelas berdasarkan <strong>mayoritas kelas</strong>.</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="kelebihan-k-nn">
+<h1>Kelebihan K-NN<a class="headerlink" href="#kelebihan-k-nn" title="Permalink to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Mudah dipahami dan diimplementasikan.</p></li>
+<li><p>Tidak memerlukan proses training yang kompleks.</p></li>
+<li><p>Dapat digunakan untuk klasifikasi dan regresi.</p></li>
+<li><p>Efektif untuk dataset kecil hingga menengah.</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="kekurangan-k-nn">
+<h1>Kekurangan K-NN<a class="headerlink" href="#kekurangan-k-nn" title="Permalink to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Lambat jika dataset sangat besar.</p></li>
+<li><p>Sensitif terhadap outlier.</p></li>
+<li><p>Pemilihan nilai <strong>k</strong> sangat mempengaruhi hasil.</p></li>
+<li><p>Sensitif terhadap skala data sehingga perlu normalisasi.</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="contoh-penerapan">
+<h1>Contoh Penerapan<a class="headerlink" href="#contoh-penerapan" title="Permalink to this heading">#</a></h1>
+<p>Algoritma K-NN digunakan dalam:</p>
 <ul class="simple">
-<li><p>Tujuan: Mengekstraksi informasi valid, baru, dan dapat dipahami dari data besar (big data).</p></li>
-<li><p>Proses (KDD - Knowledge Discovery in Databases): Meliputi pembersihan data (data cleansing), integrasi, seleksi, transformasi, penambangan pola, evaluasi, dan penyajian data.</p></li>
-<li><p>Teknik Utama: Asosiasi, Klasifikasi, Klastering (Clustering), Prediksi.</p></li>
-<li><p>Contoh Penggunaan: Analisis perilaku pelanggan, deteksi penipuan keuangan, dan manajemen risiko.</p></li>
-<li><p>Tantangan: Membutuhkan sumber daya komputasi yang besar dan data berkualitas tinggi.
-Penambangan data merupakan bagian krusial dari Business Intelligence untuk mendapatkan keunggulan kompetitif.</p></li>
+<li><p>Pengenalan wajah</p></li>
+<li><p>Sistem rekomendasi</p></li>
+<li><p>Klasifikasi penyakit</p></li>
+<li><p>Pengenalan tulisan tangan</p></li>
+<li><p>Data mining</p></li>
 </ul>
-<div class="toctree-wrapper compound">
-</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="kesimpulan">
+<h1>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permalink to this heading">#</a></h1>
+<p>K-Nearest Neighbors (K-NN) merupakan algoritma klasifikasi sederhana namun efektif. Dengan memanfaatkan konsep <strong>kedekatan jarak antar data</strong>, algoritma ini mampu menentukan kelas suatu data baru.</p>
+<p>Meskipun memiliki keterbatasan pada dataset besar, K-NN tetap menjadi algoritma yang populer karena kemudahan implementasi dan akurasi yang cukup baik pada berbagai kasus klasifikasi.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -459,15 +581,6 @@ Penambangan data merupakan bagian krusial dari Business Intelligence untuk menda
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="pertemuan_1.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">pertemuan 1</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -484,8 +597,19 @@ Penambangan data merupakan bagian krusial dari Business Intelligence untuk menda
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Biodata Diri</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penambangan-data-data-mining">PENAMBANGAN DATA (Data Mining)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">K-Nearest Neighbors (K-NN)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prinsip-dasar-k-nn">Prinsip Dasar K-NN</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#euclidean-distance">Euclidean Distance</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-manhattan">Jarak Manhattan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-minkowski">Jarak Minkowski</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-chebyshev">Jarak Chebyshev</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-cosine">Jarak Cosine</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-mahalanobis">Jarak Mahalanobis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prosedur-algoritma-k-nn">Prosedur Algoritma K-NN</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kelebihan-k-nn">Kelebihan K-NN</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kekurangan-k-nn">Kekurangan K-NN</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penerapan">Contoh Penerapan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 </ul>
 
   </nav></div>

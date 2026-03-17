@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Biodata Diri &#8212; PENAMBANGAN DATA A</title>
+    <title>Pre-processing &#8212; PENAMBANGAN DATA A</title>
   
   
   
@@ -62,10 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pre-proses';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="pertemuan 1" href="pertemuan_1.html" />
+    <link rel="next" title="Missing Values" href="missing_values.html" />
+    <link rel="prev" title="Pengukuran Jarak Data Mahasiswa" href="jarak_pelatihan.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -128,8 +129,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -148,7 +147,7 @@ const thebe_selector_output = ".output, .cell_output"
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -168,13 +167,13 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Biodata Diri
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="pertemuan_1.html">pertemuan 1</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="pengukuran_jarak.html">Mengukur Jarak</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="eksplorasidata.html">Eksplorasi Data Iris</a></li>
@@ -188,7 +187,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="pre-proses.html">Pre-processing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Pre-processing</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="missing_values.html">Missing Values</a></li>
 <li class="toctree-l2"><a class="reference internal" href="normalisasi_data.html">Normalisasi Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="WKNN.html">WKNN</a></li>
@@ -265,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpre-proses.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -295,7 +294,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/pre-proses.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -379,7 +378,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Biodata Diri</h1>
+    <h1>Pre-processing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -389,10 +388,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Biodata Diri</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penambangan-data-data-mining">PENAMBANGAN DATA (Data Mining)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manfaat-data-preprocessing">Manfaat Data Preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tahapan-data-preprocessing">Tahapan Data Preprocessing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">1. Data Cleaning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-integration">2. Data Integration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-transformation">3. Data Transformation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-reduction">4. Data Reduction</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+</ul>
             </nav>
         </div>
     </div>
@@ -403,28 +408,66 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="biodata-diri">
-<h1>Biodata Diri<a class="headerlink" href="#biodata-diri" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="pre-processing">
+<h1>Pre-processing<a class="headerlink" href="#pre-processing" title="Permalink to this heading">#</a></h1>
+<p><strong>Data Preprocessing</strong> merupakan salah satu tahapan penting dalam proses data mining. Sebelum data digunakan untuk proses analisis atau pemodelan, data mentah terlebih dahulu perlu melalui tahap pengolahan awal. Tahap ini dilakukan karena data yang diperoleh dari berbagai sumber sering kali masih belum siap digunakan secara langsung.</p>
+<p>Data mentah biasanya memiliki berbagai permasalahan seperti data yang tidak lengkap, adanya nilai yang hilang (missing values), data yang tidak konsisten, ataupun format data yang berbeda-beda. Oleh karena itu, proses preprocessing dilakukan untuk memperbaiki kualitas data agar menjadi lebih bersih, terstruktur, dan mudah dipahami oleh sistem.</p>
+<p>Pengertian lain menyebutkan bahwa data preprocessing merupakan tahapan untuk menghilangkan berbagai permasalahan yang dapat mengganggu proses pengolahan data. Permasalahan tersebut dapat berupa data yang tidak konsisten, adanya kesalahan input, data duplikat, maupun data yang tidak relevan dengan tujuan analisis. Dengan melakukan preprocessing, data dapat diolah menjadi bentuk yang lebih sesuai untuk proses analisis lebih lanjut.</p>
+<p>Data preprocessing merupakan salah satu teknik awal yang sangat penting sebelum melakukan proses data mining atau machine learning. Pada tahap ini, data akan melalui beberapa proses seperti pembersihan data (cleaning), penggabungan data (integration), transformasi data (transformation), serta pengurangan data (reduction). Melalui proses tersebut, kualitas data akan meningkat sehingga proses analisis data dapat dilakukan dengan lebih efektif dan efisien.</p>
+<p>Dengan kata lain, data preprocessing berperan penting dalam memastikan bahwa data yang digunakan dalam proses analisis sudah memiliki kualitas yang baik. Data yang telah melalui tahap pra-pemrosesan akan lebih mudah diproses oleh sistem serta dapat menghasilkan informasi yang lebih akurat dan dapat dipercaya.</p>
+<section id="manfaat-data-preprocessing">
+<h2>Manfaat Data Preprocessing<a class="headerlink" href="#manfaat-data-preprocessing" title="Permalink to this heading">#</a></h2>
+<p>Data preprocessing memiliki peran yang sangat penting dalam proyek berbasis data. Proses ini membantu memastikan bahwa data yang digunakan dalam analisis memiliki kualitas yang baik sehingga hasil analisis menjadi lebih akurat. Beberapa manfaat utama dari data preprocessing antara lain:</p>
 <ul class="simple">
-<li><p>Nama Lengkap: Verdi Setyawan Ardiansyah Putra</p></li>
-<li><p>Nim: 240411100100</p></li>
-<li><p>Kelas: Penambangan Data A</p></li>
-<li><p>Email: <a class="reference external" href="mailto:setiawanferdi622&#37;&#52;&#48;gmail&#46;com">setiawanferdi622<span>&#64;</span>gmail<span>&#46;</span>com</a></p></li>
-<li><p>Program studi: Teknik Informatika</p></li>
+<li><p>Mempermudah proses data mining dan analisis data</p></li>
+<li><p>Membuat data menjadi lebih mudah dipahami dan dibaca</p></li>
+<li><p>Mengurangi kompleksitas dan beban representasi data</p></li>
+<li><p>Mempercepat proses pemrosesan data secara signifikan</p></li>
+<li><p>Membantu meningkatkan akurasi model dalam machine learning</p></li>
+</ul>
+<p>Dengan melakukan preprocessing, data yang awalnya tidak terstruktur dapat diubah menjadi data yang lebih rapi dan siap digunakan untuk proses analisis.</p>
+</section>
+<section id="tahapan-data-preprocessing">
+<h2>Tahapan Data Preprocessing<a class="headerlink" href="#tahapan-data-preprocessing" title="Permalink to this heading">#</a></h2>
+<p>Secara umum, proses kerja data preprocessing terdiri dari empat tahapan utama, yaitu data cleaning, data integration, data transformation, dan data reduction. Setiap tahapan memiliki peran yang berbeda dalam meningkatkan kualitas data sebelum dilakukan proses analisis lebih lanjut.</p>
+<section id="data-cleaning">
+<h3>1. Data Cleaning<a class="headerlink" href="#data-cleaning" title="Permalink to this heading">#</a></h3>
+<p>Data cleaning merupakan tahap pertama dalam proses preprocessing yang bertujuan untuk membersihkan data dari berbagai permasalahan. Pada tahap ini, data mentah diperiksa untuk menemukan nilai yang hilang, kesalahan penulisan data, data duplikat, serta inkonsistensi data.</p>
+<p>Beberapa teknik yang dapat digunakan dalam proses data cleaning antara lain mengisi nilai yang hilang (missing value imputation), mengurangi data yang berisik (noisy data), serta memperbaiki kesalahan atau inkonsistensi pada data. Selain itu, metode seperti binning, regression, atau grouping juga dapat digunakan untuk menyusun data menjadi lebih teratur.</p>
+</section>
+<section id="data-integration">
+<h3>2. Data Integration<a class="headerlink" href="#data-integration" title="Permalink to this heading">#</a></h3>
+<p>Data integration merupakan proses penggabungan data yang berasal dari berbagai sumber menjadi satu dataset yang utuh dan konsisten. Dalam banyak kasus, data yang digunakan dalam analisis berasal dari lebih dari satu sumber sehingga perlu dilakukan proses penggabungan data.</p>
+<p>Tahap ini melibatkan proses penyesuaian format data, penghapusan atribut yang tidak relevan, serta penyelesaian konflik data yang mungkin terjadi antar sumber data. Tujuan dari data integration adalah menghasilkan dataset yang lebih lengkap dan konsisten sehingga dapat digunakan dalam proses analisis dengan lebih baik.</p>
+</section>
+<section id="data-transformation">
+<h3>3. Data Transformation<a class="headerlink" href="#data-transformation" title="Permalink to this heading">#</a></h3>
+<p>Data transformation merupakan tahap di mana data diubah ke dalam bentuk atau format yang lebih sesuai untuk proses analisis. Pada tahap ini, data dapat dinormalisasi, digeneralisasi, atau disesuaikan agar memiliki struktur yang lebih mudah diproses oleh algoritma data mining.</p>
+<p>Beberapa proses yang termasuk dalam data transformation antara lain:</p>
+<ul class="simple">
+<li><p><strong>Aggregation</strong>: Menggabungkan beberapa data menjadi satu bentuk data yang lebih ringkas.</p></li>
+<li><p><strong>Normalization</strong>: Mengubah skala data agar berada dalam rentang tertentu sehingga memudahkan proses perbandingan antar data.</p></li>
+<li><p><strong>Feature Selection</strong>: Memilih atribut atau variabel yang paling relevan untuk digunakan dalam analisis.</p></li>
+<li><p><strong>Discretization</strong>: Mengelompokkan data numerik ke dalam beberapa interval tertentu.</p></li>
+<li><p><strong>Concept Hierarchy Generation</strong>: Membentuk hirarki konsep baru dalam dataset untuk membantu proses analisis.</p></li>
 </ul>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="penambangan-data-data-mining">
-<h1>PENAMBANGAN DATA (Data Mining)<a class="headerlink" href="#penambangan-data-data-mining" title="Permalink to this heading">#</a></h1>
-<p>Penambangan data (data mining) adalah proses otomatisasi untuk menemukan pola, tren, dan hubungan tersembunyi dalam set data besar menggunakan teknik statistik, matematika, dan machine learning. Teknik ini mengubah data mentah menjadi wawasan berharga (pengetahuan praktis) untuk memprediksi hasil masa depan, mengoptimalkan bisnis, dan meningkatkan pengambilan keputusan.</p>
-<p>Aspek Utama Penambangan Data:</p>
+<section id="data-reduction">
+<h3>4. Data Reduction<a class="headerlink" href="#data-reduction" title="Permalink to this heading">#</a></h3>
+<p>Data reduction merupakan tahap terakhir dalam proses preprocessing yang bertujuan untuk mengurangi jumlah data tanpa menghilangkan informasi penting yang terkandung di dalamnya. Dataset yang terlalu besar dapat menyebabkan proses analisis menjadi lebih lambat serta meningkatkan kompleksitas pemrosesan data.</p>
+<p>Beberapa teknik yang dapat digunakan dalam proses data reduction antara lain:</p>
 <ul class="simple">
-<li><p>Tujuan: Mengekstraksi informasi valid, baru, dan dapat dipahami dari data besar (big data).</p></li>
-<li><p>Proses (KDD - Knowledge Discovery in Databases): Meliputi pembersihan data (data cleansing), integrasi, seleksi, transformasi, penambangan pola, evaluasi, dan penyajian data.</p></li>
-<li><p>Teknik Utama: Asosiasi, Klasifikasi, Klastering (Clustering), Prediksi.</p></li>
-<li><p>Contoh Penggunaan: Analisis perilaku pelanggan, deteksi penipuan keuangan, dan manajemen risiko.</p></li>
-<li><p>Tantangan: Membutuhkan sumber daya komputasi yang besar dan data berkualitas tinggi.
-Penambangan data merupakan bagian krusial dari Business Intelligence untuk mendapatkan keunggulan kompetitif.</p></li>
+<li><p><strong>Dimensionality Reduction</strong>: Mengurangi jumlah atribut atau dimensi pada dataset.</p></li>
+<li><p><strong>Numerosity Reduction</strong>: Mengurangi jumlah data melalui teknik sampling atau pemodelan.</p></li>
+<li><p><strong>Data Compression</strong>: Mengompres data untuk menghemat ruang penyimpanan tanpa kehilangan informasi penting.</p></li>
 </ul>
+</section>
+</section>
+<section id="kesimpulan">
+<h2>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permalink to this heading">#</a></h2>
+<p>Data preprocessing merupakan tahapan awal yang sangat penting dalam proses pengolahan data sebelum dilakukan analisis lebih lanjut. Melalui proses ini, data mentah yang masih memiliki berbagai permasalahan dapat dibersihkan, disusun, serta disesuaikan agar memiliki kualitas yang lebih baik.</p>
+<p>Dengan melakukan data preprocessing, proses data mining dan machine learning dapat berjalan dengan lebih efektif dan efisien. Data yang telah melalui tahap preprocessing akan lebih terstruktur, mudah dipahami, serta mampu menghasilkan informasi yang lebih akurat dan dapat dipercaya.</p>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -459,12 +502,21 @@ Penambangan data merupakan bagian krusial dari Business Intelligence untuk menda
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="jarak_pelatihan.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Pengukuran Jarak Data Mahasiswa</p>
+      </div>
+    </a>
     <a class="right-next"
-       href="pertemuan_1.html"
+       href="missing_values.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">pertemuan 1</p>
+        <p class="prev-next-title">Missing Values</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -484,10 +536,16 @@ Penambangan data merupakan bagian krusial dari Business Intelligence untuk menda
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Biodata Diri</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penambangan-data-data-mining">PENAMBANGAN DATA (Data Mining)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manfaat-data-preprocessing">Manfaat Data Preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tahapan-data-preprocessing">Tahapan Data Preprocessing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">1. Data Cleaning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-integration">2. Data Integration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-transformation">3. Data Transformation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-reduction">4. Data Reduction</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+</ul>
   </nav></div>
 
 </div></div>
