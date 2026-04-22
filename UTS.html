@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Analisis Kesuburan Tanah Menggunakan K-Nearest Neighbors (KNN) &#8212; PENAMBANGAN DATA A</title>
+    <title>UTS &#8212; PENAMBANGAN DATA A</title>
   
   
   
@@ -192,7 +192,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="WKNN.html">WKNN</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Analisis Kesuburan Tanah Menggunakan K-Nearest Neighbors (KNN)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">UTS</a></li>
+
 </ul>
 
     </div>
@@ -378,7 +379,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Analisis Kesuburan Tanah Menggunakan K-Nearest Neighbors (KNN)</h1>
+    <h1>UTS</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -388,17 +389,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">UTS</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-kesuburan-tanah-menggunakan-k-nearest-neighbors-knn">Analisis Kesuburan Tanah Menggunakan K-Nearest Neighbors (KNN)</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesuburan-tanah-dataset">Kesuburan Tanah Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gambar-workflow-knime">Gambar Workflow Knime</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">Data Preprocessing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembagian-data">Pembagian Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-k-nearest-neighbors-knn">Model K-Nearest Neighbors (KNN)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confusion-matrix">Confusion Matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-confusion-matrix-knime">📌 Workflow Confusion Matrix KNIME</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrik-evaluasi">Metrik Evaluasi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-hasil">Analisis Hasil</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catatan">Catatan</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -409,7 +415,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="analisis-kesuburan-tanah-menggunakan-k-nearest-neighbors-knn">
+  <section class="tex2jax_ignore mathjax_ignore" id="uts">
+<h1>UTS<a class="headerlink" href="#uts" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="analisis-kesuburan-tanah-menggunakan-k-nearest-neighbors-knn">
 <h1>Analisis Kesuburan Tanah Menggunakan K-Nearest Neighbors (KNN)<a class="headerlink" href="#analisis-kesuburan-tanah-menggunakan-k-nearest-neighbors-knn" title="Permalink to this heading">#</a></h1>
 <p>Melakukan klasifikasi kesuburan tanah menggunakan algoritma <strong>K-Nearest Neighbors (KNN)</strong>.</p>
 <p>Dataset terdiri dari:</p>
@@ -427,6 +436,9 @@ document.write(`
 <section id="kesuburan-tanah-dataset">
 <h2>Kesuburan Tanah Dataset<a class="headerlink" href="#kesuburan-tanah-dataset" title="Permalink to this heading">#</a></h2>
 <p><a class="reference download internal" download="" href="_downloads/9695bf5be053b27ce1aafe41e9b5ba9a/dataset_kesuburan_tanah_missing.csv"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Iris</span> <span class="pre">Dataset</span></code></a></p>
+</section>
+<section id="gambar-workflow-knime">
+<h2>Gambar Workflow Knime<a class="headerlink" href="#gambar-workflow-knime" title="Permalink to this heading">#</a></h2>
 <p><img alt="Workflow" src="_images/workflow.png" /></p>
 <p>Gambar di atas menunjukkan alur workflow pada KNIME yang digunakan dalam proses klasifikasi kesuburan tanah. Proses dimulai dari pembacaan data hingga evaluasi model menggunakan Scorer.</p>
 </section>
@@ -734,10 +746,8 @@ dtype: int64
 </table>
 </div>
 <p>Total data uji: 400</p>
-</section>
-<section id="workflow-confusion-matrix-knime">
-<h2>📌 Workflow Confusion Matrix KNIME<a class="headerlink" href="#workflow-confusion-matrix-knime" title="Permalink to this heading">#</a></h2>
-<img src="confusion_matrix.png" width="450"><p>Gambar di atas merupakan hasil confusion matrix dari model KNN. Terlihat bahwa seluruh data berhasil diklasifikasikan dengan benar tanpa adanya kesalahan prediksi.</p>
+<p><img alt="alt text" src="_images/confusion_matrix.png" /></p>
+<p>Gambar di atas merupakan hasil confusion matrix dari model KNN. Terlihat bahwa seluruh data berhasil diklasifikasikan dengan benar tanpa adanya kesalahan prediksi.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
@@ -902,17 +912,22 @@ weighted avg       1.00      1.00      1.00       400
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">UTS</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-kesuburan-tanah-menggunakan-k-nearest-neighbors-knn">Analisis Kesuburan Tanah Menggunakan K-Nearest Neighbors (KNN)</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesuburan-tanah-dataset">Kesuburan Tanah Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gambar-workflow-knime">Gambar Workflow Knime</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">Data Preprocessing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembagian-data">Pembagian Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-k-nearest-neighbors-knn">Model K-Nearest Neighbors (KNN)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confusion-matrix">Confusion Matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-confusion-matrix-knime">📌 Workflow Confusion Matrix KNIME</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrik-evaluasi">Metrik Evaluasi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-hasil">Analisis Hasil</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catatan">Catatan</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
