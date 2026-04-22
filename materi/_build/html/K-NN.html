@@ -1,0 +1,668 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>K-Nearest Neighbors (K-NN) &#8212; PENAMBANGAN DATA A</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'K-NN';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/Logo.jpeg" class="logo__image only-light" alt="PENAMBANGAN DATA A - Home"/>
+    <script>document.write(`<img src="_static/Logo.jpeg" class="logo__image only-dark" alt="PENAMBANGAN DATA A - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Biodata Diri
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pertemuan_1.html">pertemuan 1</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pengukuran_jarak.html">Mengukur Jarak</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="eksplorasidata.html">Eksplorasi Data Iris</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data_Deskriptif_Iris.html">Dataset Penelitian</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="Visualisasi_data_Iris.html">Histogram</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="jarak_pelatihan.html">Pengukuran Jarak Data Mahasiswa</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pre-proses.html">Pre-processing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="missing_values.html">Missing Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="normalisasi_data.html">Normalisasi Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WKNN.html">WKNN</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FK-NN.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/K-NN.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>K-Nearest Neighbors (K-NN)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">K-Nearest Neighbors (K-NN)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prinsip-dasar-k-nn">Prinsip Dasar K-NN</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#euclidean-distance">Euclidean Distance</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-manhattan">Jarak Manhattan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-minkowski">Jarak Minkowski</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-chebyshev">Jarak Chebyshev</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-cosine">Jarak Cosine</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-mahalanobis">Jarak Mahalanobis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prosedur-algoritma-k-nn">Prosedur Algoritma K-NN</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kelebihan-k-nn">Kelebihan K-NN</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kekurangan-k-nn">Kekurangan K-NN</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penerapan">Contoh Penerapan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="k-nearest-neighbors-k-nn">
+<h1>K-Nearest Neighbors (K-NN)<a class="headerlink" href="#k-nearest-neighbors-k-nn" title="Permalink to this heading">#</a></h1>
+<p>K-Nearest Neighbors (K-NN) merupakan salah satu algoritma klasifikasi yang sangat populer dalam bidang <strong>machine learning</strong>, khususnya dalam kategori <strong>supervised learning</strong>. Algoritma ini pertama kali diperkenalkan oleh <strong>Evelyn Fix</strong> dan <strong>Joseph Hodges</strong> pada tahun 1951. K-NN bekerja dengan cara mengklasifikasikan suatu data baru berdasarkan kedekatan atau kemiripan dengan data lain yang sudah diketahui kelasnya dalam dataset.</p>
+<p>Prinsip utama dari algoritma ini adalah bahwa <strong>data yang memiliki karakteristik mirip akan cenderung berada pada kelas yang sama</strong>. Oleh karena itu, proses klasifikasi dilakukan dengan melihat sejumlah tetangga terdekat dari suatu data baru.</p>
+<p>Algoritma K-NN termasuk metode <strong>lazy learning</strong>, yaitu algoritma yang tidak membangun model secara eksplisit selama proses pelatihan. Sebaliknya, seluruh data pelatihan disimpan dan digunakan langsung ketika proses klasifikasi dilakukan.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="prinsip-dasar-k-nn">
+<h1>Prinsip Dasar K-NN<a class="headerlink" href="#prinsip-dasar-k-nn" title="Permalink to this heading">#</a></h1>
+<p>Prinsip dasar dari K-NN adalah memanfaatkan <strong>perhitungan jarak antar data</strong> untuk menentukan kelompok atau kelas suatu data baru.</p>
+<p>Ketika terdapat data baru yang belum diketahui kelasnya, algoritma K-NN akan:</p>
+<ol class="arabic simple">
+<li><p>Menghitung jarak antara data baru dengan seluruh data pada dataset pelatihan.</p></li>
+<li><p>Menentukan sejumlah tetangga terdekat berdasarkan nilai parameter <strong>k</strong>.</p></li>
+<li><p>Mengambil <strong>mayoritas kelas</strong> dari tetangga terdekat tersebut.</p></li>
+<li><p>Menetapkan kelas tersebut sebagai hasil klasifikasi data baru.</p></li>
+</ol>
+<p>Sebagai contoh, jika nilai <strong>k = 3</strong>, maka algoritma akan melihat <strong>3 data terdekat</strong> dari data baru dan menentukan kelas berdasarkan mayoritas dari ketiga data tersebut.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="euclidean-distance">
+<h1>Euclidean Distance<a class="headerlink" href="#euclidean-distance" title="Permalink to this heading">#</a></h1>
+<p>Euclidean Distance merupakan metode pengukuran jarak yang paling umum digunakan dalam algoritma K-NN. Metode ini menghitung jarak lurus antara dua titik dalam ruang multidimensi.</p>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
+\]</div>
+<p>Semakin kecil nilai jarak Euclidean antara dua data, maka semakin mirip kedua data tersebut.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="jarak-manhattan">
+<h1>Jarak Manhattan<a class="headerlink" href="#jarak-manhattan" title="Permalink to this heading">#</a></h1>
+<p>Jarak Manhattan adalah metode pengukuran jarak yang menghitung jarak antar titik dalam bentuk <strong>pergerakan horizontal dan vertikal</strong>, seperti jalur jalan pada kota berbentuk grid.</p>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+d(A,B) = \sum_{i=1}^{n} |x_i - y_i|
+\]</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="jarak-minkowski">
+<h1>Jarak Minkowski<a class="headerlink" href="#jarak-minkowski" title="Permalink to this heading">#</a></h1>
+<p>Jarak Minkowski merupakan generalisasi dari jarak Euclidean dan Manhattan.</p>
+<p>Jika:</p>
+<ul class="simple">
+<li><p>p = 1 → Manhattan Distance</p></li>
+<li><p>p = 2 → Euclidean Distance</p></li>
+</ul>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+d(A,B) = \left( \sum_{i=1}^{n} |x_i - y_i|^p \right)^{1/p}
+\]</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="jarak-chebyshev">
+<h1>Jarak Chebyshev<a class="headerlink" href="#jarak-chebyshev" title="Permalink to this heading">#</a></h1>
+<p>Jarak Chebyshev digunakan untuk mengukur jarak maksimum antara dua titik pada salah satu dimensi koordinat.</p>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+d(A,B) = \max(|x_i - y_i|)
+\]</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="jarak-cosine">
+<h1>Jarak Cosine<a class="headerlink" href="#jarak-cosine" title="Permalink to this heading">#</a></h1>
+<p>Cosine Distance digunakan untuk mengukur <strong>kemiripan antara dua vektor</strong> terutama pada data berdimensi tinggi seperti dokumen teks.</p>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+d(A,B) =
+1 -
+\frac{\sum_{i=1}^{n} x_i y_i}
+{\sqrt{\sum_{i=1}^{n} x_i^2}
+\cdot
+\sqrt{\sum_{i=1}^{n} y_i^2}}
+\]</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="jarak-mahalanobis">
+<h1>Jarak Mahalanobis<a class="headerlink" href="#jarak-mahalanobis" title="Permalink to this heading">#</a></h1>
+<p>Mahalanobis Distance mempertimbangkan <strong>distribusi data dan korelasi antar variabel</strong>.</p>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+d(A,B) =
+\sqrt{(X - Y)^T S^{-1} (X - Y)}
+\]</div>
+<p>Dimana:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X\)</span> = vektor data pertama</p></li>
+<li><p><span class="math notranslate nohighlight">\(Y\)</span> = vektor data kedua</p></li>
+<li><p><span class="math notranslate nohighlight">\(S⁻¹\)</span> = invers matriks kovarians</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="prosedur-algoritma-k-nn">
+<h1>Prosedur Algoritma K-NN<a class="headerlink" href="#prosedur-algoritma-k-nn" title="Permalink to this heading">#</a></h1>
+<p>Langkah-langkah algoritma:</p>
+<ol class="arabic simple">
+<li><p>Tentukan nilai <strong>k</strong>.</p></li>
+<li><p>Hitung jarak data baru dengan seluruh data dataset.</p></li>
+<li><p>Urutkan jarak dari yang terkecil.</p></li>
+<li><p>Ambil <strong>k tetangga terdekat</strong>.</p></li>
+<li><p>Tentukan kelas berdasarkan <strong>mayoritas kelas</strong>.</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="kelebihan-k-nn">
+<h1>Kelebihan K-NN<a class="headerlink" href="#kelebihan-k-nn" title="Permalink to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Mudah dipahami dan diimplementasikan.</p></li>
+<li><p>Tidak memerlukan proses training yang kompleks.</p></li>
+<li><p>Dapat digunakan untuk klasifikasi dan regresi.</p></li>
+<li><p>Efektif untuk dataset kecil hingga menengah.</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="kekurangan-k-nn">
+<h1>Kekurangan K-NN<a class="headerlink" href="#kekurangan-k-nn" title="Permalink to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Lambat jika dataset sangat besar.</p></li>
+<li><p>Sensitif terhadap outlier.</p></li>
+<li><p>Pemilihan nilai <strong>k</strong> sangat mempengaruhi hasil.</p></li>
+<li><p>Sensitif terhadap skala data sehingga perlu normalisasi.</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="contoh-penerapan">
+<h1>Contoh Penerapan<a class="headerlink" href="#contoh-penerapan" title="Permalink to this heading">#</a></h1>
+<p>Algoritma K-NN digunakan dalam:</p>
+<ul class="simple">
+<li><p>Pengenalan wajah</p></li>
+<li><p>Sistem rekomendasi</p></li>
+<li><p>Klasifikasi penyakit</p></li>
+<li><p>Pengenalan tulisan tangan</p></li>
+<li><p>Data mining</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="kesimpulan">
+<h1>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permalink to this heading">#</a></h1>
+<p>K-Nearest Neighbors (K-NN) merupakan algoritma klasifikasi sederhana namun efektif. Dengan memanfaatkan konsep <strong>kedekatan jarak antar data</strong>, algoritma ini mampu menentukan kelas suatu data baru.</p>
+<p>Meskipun memiliki keterbatasan pada dataset besar, K-NN tetap menjadi algoritma yang populer karena kemudahan implementasi dan akurasi yang cukup baik pada berbagai kasus klasifikasi.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">K-Nearest Neighbors (K-NN)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prinsip-dasar-k-nn">Prinsip Dasar K-NN</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#euclidean-distance">Euclidean Distance</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-manhattan">Jarak Manhattan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-minkowski">Jarak Minkowski</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-chebyshev">Jarak Chebyshev</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-cosine">Jarak Cosine</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-mahalanobis">Jarak Mahalanobis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prosedur-algoritma-k-nn">Prosedur Algoritma K-NN</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kelebihan-k-nn">Kelebihan K-NN</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kekurangan-k-nn">Kekurangan K-NN</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penerapan">Contoh Penerapan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Verdi Setyawan Ardiansyah Putra
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

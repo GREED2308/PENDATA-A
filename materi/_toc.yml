@@ -1,0 +1,19 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: pertemuan_1
+- file: pengukuran_jarak
+  sections:
+  - file: eksplorasidata
+  - file: Data_Deskriptif_Iris
+  - file: Visualisasi_data_Iris
+  - file: jarak_pelatihan
+- file: pre-proses
+  sections:
+  - file: missing_values
+  - file: normalisasi_data
+  - file: k-NN
+  - file: WKNN
