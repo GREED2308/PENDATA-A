@@ -65,7 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Visualisasi_data_Iris';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Data Collection" href="Data_Deskriptif_Iris.html" />
+    <link rel="next" title="Pengukuran Jarak Data Mahasiswa" href="jarak_pelatihan.html" />
+    <link rel="prev" title="Dataset Penelitian" href="Data_Deskriptif_Iris.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,15 +174,28 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="pertemuan_1.html">pertemuan 1</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pertemuan_1.html">pertemuan 1</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="pengukuran_jarak.html">Mengukur Jarak</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="eksplorasidata.html">Eksplorasi Data Iris</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Data_Deskriptif_Iris.html">Data Collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data_Deskriptif_Iris.html">Dataset Penelitian</a></li>
+
 
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Histogram</a></li>
 
 
+<li class="toctree-l2"><a class="reference internal" href="jarak_pelatihan.html">Pengukuran Jarak Data Mahasiswa</a></li>
+
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pre-proses.html">Pre-processing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="missing_values.html">Missing Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="normalisasi_data.html">Normalisasi Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WKNN.html">WKNN</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="UTS.html">UTS</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="tugas01.html">Analisis Data Menggunakan Naive Bayes (Iris Dataset)</a></li>
 </ul>
 
     </div>
@@ -378,16 +392,13 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Histogram</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Histogram</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">Pengertian</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-histogram-dataset-iris">Analisis Histogram Dataset Iris</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-histogram">Kesimpulan Histogram</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">Pengertian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-histogram-dataset-iris">Analisis Histogram Dataset Iris</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-histogram">Kesimpulan Histogram</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot">Scatter Plot</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Pengertian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Pengertian</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-scatter-plot-dataset-iris">Analisis Scatter Plot Dataset Iris</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-umum">Kesimpulan Umum</a></li>
 </ul>
@@ -448,10 +459,10 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
 
 <span class="n">files</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;Histogram_Sepal_Length.png&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Histogram_Sepal_Width.png&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Histogram_Petal_Length.png&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Histogram_Petal_Width.png&#39;</span>
+    <span class="s1">&#39;gambar/Histogram_Sepal_Length.png&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;gambar/Histogram_Sepal_Width.png&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;gambar/Histogram_Petal_Length.png&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;gambar/Histogram_Petal_Width.png&#39;</span>
 <span class="p">]</span>
 
 <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
@@ -466,10 +477,8 @@ document.write(`
 <img alt="_images/4eda49e5e5c49a61abaed3aaee24c91039d65a32f58746a8b582d6d9b3f91c9f.png" src="_images/4eda49e5e5c49a61abaed3aaee24c91039d65a32f58746a8b582d6d9b3f91c9f.png" />
 </div>
 </div>
-<section id="id1">
-<h2>Histogram<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <section id="pengertian">
-<h3>Pengertian<a class="headerlink" href="#pengertian" title="Permalink to this heading">#</a></h3>
+<h2>Pengertian<a class="headerlink" href="#pengertian" title="Permalink to this heading">#</a></h2>
 <p>Histogram adalah grafik yang digunakan untuk melihat distribusi frekuensi dari suatu variabel numerik. Histogram membantu kita memahami:</p>
 <ul class="simple">
 <li><p>Pola penyebaran data</p></li>
@@ -478,7 +487,7 @@ document.write(`
 </ul>
 </section>
 <section id="analisis-histogram-dataset-iris">
-<h3>Analisis Histogram Dataset Iris<a class="headerlink" href="#analisis-histogram-dataset-iris" title="Permalink to this heading">#</a></h3>
+<h2>Analisis Histogram Dataset Iris<a class="headerlink" href="#analisis-histogram-dataset-iris" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Histogram Sepal Length</p></li>
 </ol>
@@ -516,15 +525,14 @@ document.write(`
 </ul>
 </section>
 <section id="kesimpulan-histogram">
-<h3>Kesimpulan Histogram<a class="headerlink" href="#kesimpulan-histogram" title="Permalink to this heading">#</a></h3>
+<h2>Kesimpulan Histogram<a class="headerlink" href="#kesimpulan-histogram" title="Permalink to this heading">#</a></h2>
 <p>Fitur petal length dan petal width lebih informatif dibandingkan sepal length dan sepal width dalam membedakan spesies bunga Iris.</p>
-</section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="scatter-plot">
 <h1>Scatter Plot<a class="headerlink" href="#scatter-plot" title="Permalink to this heading">#</a></h1>
-<section id="id2">
-<h2>Pengertian<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h2>Pengertian<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>Scatter plot digunakan untuk melihat hubungan (korelasi) antara dua variabel numerik. Grafik ini membantu kita:</p>
 <ul class="simple">
 <li><p>Melihat pola hubungan</p></li>
@@ -756,8 +764,17 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Data Collection</p>
+        <p class="prev-next-title">Dataset Penelitian</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="jarak_pelatihan.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Pengukuran Jarak Data Mahasiswa</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -776,16 +793,13 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Histogram</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Histogram</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">Pengertian</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-histogram-dataset-iris">Analisis Histogram Dataset Iris</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-histogram">Kesimpulan Histogram</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">Pengertian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-histogram-dataset-iris">Analisis Histogram Dataset Iris</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-histogram">Kesimpulan Histogram</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot">Scatter Plot</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Pengertian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Pengertian</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-scatter-plot-dataset-iris">Analisis Scatter Plot Dataset Iris</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-umum">Kesimpulan Umum</a></li>
 </ul>
