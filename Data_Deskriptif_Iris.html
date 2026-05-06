@@ -176,7 +176,8 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="pertemuan_1.html">pertemuan 1</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pertemuan_1.html">pertemuan 1</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="pengukuran_jarak.html">Mengukur Jarak</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="eksplorasidata.html">Eksplorasi Data Iris</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Dataset Penelitian</a></li>
 
@@ -184,8 +185,19 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Visualisasi_data_Iris.html">Histogram</a></li>
 
 
+<li class="toctree-l2"><a class="reference internal" href="jarak_pelatihan.html">Pengukuran Jarak Data Mahasiswa</a></li>
+
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pre-proses.html">Pre-processing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="missing_values.html">Missing Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="normalisasi_data.html">Normalisasi Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WKNN.html">WKNN</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="UTS.html">UTS</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="tugas01.html">Analisis Data Menggunakan Naive Bayes (Iris Dataset)</a></li>
 </ul>
 
     </div>
@@ -965,7 +977,7 @@ memory usage: 7.4+ KB
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
-<span class="n">Image</span><span class="p">(</span><span class="s1">&#39;data_orange.png&#39;</span><span class="p">)</span>
+<span class="n">Image</span><span class="p">(</span><span class="s1">&#39;gambar/data_orange.png&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1007,7 +1019,9 @@ Q2 (Median)        : 3.0
 Q3                 : 3.3
 Nilai maksimal     : 4.4
 Kemencengan (skew) : 0.33
-Nilai modus        : 3.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai modus        : 3.0
 Jumlah modus       : 26
 Standar deviasi    : 0.43
 Variansi           : 0.19
