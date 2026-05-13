@@ -4,7 +4,7 @@
 title: PENAMBANGAN DATA A
 author: Verdi Setyawan Ardiansyah Putra
 copyright: "2026"
-logo: gambar/Logo.jpeg
+logo: gambar/logo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
