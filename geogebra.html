@@ -479,8 +479,11 @@ document.write(`
 <p>Persamaan dasar aljabar linier yang digunakan untuk mencari estimator parameter koefisien regresi adalah persamaan <em>Ordinary Least Squares</em> (OLS):</p>
 <div class="math notranslate nohighlight">
 \[\hat{\beta} = (X^T X)^{-1} X^T Y\]</div>
-<p>Dimana vektor kolom <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> menampung parameter model:
-$<span class="math notranslate nohighlight">\(\hat{\beta} = \begin{bmatrix} \beta_0 \\ \beta_1 \end{bmatrix}\)</span>$</p>
+<p>Dimana vektor kolom <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> menampung parameter model:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{\beta} = \begin{bmatrix} \beta_0 \\ \beta_1 \end{bmatrix}
+\end{split}\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\beta_0\)</span> = <em>Intercept</em> (Titik potong sumbu Y)</p></li>
 <li><p><span class="math notranslate nohighlight">\(\beta_1\)</span> = <em>Slope</em> (Koefisien kemiringan arah variabel <span class="math notranslate nohighlight">\(X\)</span>)</p></li>
@@ -498,8 +501,9 @@ $<span class="math notranslate nohighlight">\(\hat{\beta} = \begin{bmatrix} \bet
 </section>
 <section id="langkah-3-menghitung-perkalian-matriks-x-t-x">
 <h3>Langkah 3: Menghitung Perkalian Matriks <span class="math notranslate nohighlight">\(X^T X\)</span><a class="headerlink" href="#langkah-3-menghitung-perkalian-matriks-x-t-x" title="Permalink to this heading">#</a></h3>
-<p>Hasil perkalian menghasilkan matriks simetris berukuran <span class="math notranslate nohighlight">\(2 \times 2\)</span>:
-$<span class="math notranslate nohighlight">\(X^T X = \begin{bmatrix} 7 &amp; 26 \\ 26 &amp; 104 \end{bmatrix}\)</span>$</p>
+<p>Hasil perkalian menghasilkan matriks simetris berukuran <span class="math notranslate nohighlight">\(2 \times 2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}X^T X = \begin{bmatrix} 7 &amp; 26 \\ 26 &amp; 104 \end{bmatrix}\end{split}\]</div>
 </section>
 <section id="langkah-4-menghitung-invers-matriks-x-t-x-1">
 <h3>Langkah 4: Menghitung Invers Matriks <span class="math notranslate nohighlight">\((X^T X)^{-1}\)</span><a class="headerlink" href="#langkah-4-menghitung-invers-matriks-x-t-x-1" title="Permalink to this heading">#</a></h3>
@@ -622,8 +626,10 @@ $<span class="math notranslate nohighlight">\(X^T X = \begin{bmatrix} 7 &amp; 26
 <p>Berdasarkan perbandingan tiga metode, hasil yang didapatkan sepenuhnya sinkron dan konsisten:</p>
 <ol class="arabic simple">
 <li><p>Analitik &amp; Python menghasilkan presisi tinggi: <span class="math notranslate nohighlight">\(Intercept = 0.0000\)</span> dan <span class="math notranslate nohighlight">\(Slope = 1.0769\)</span>.</p></li>
-<li><p>GeoGebra memberikan visualisasi grafis fiting garis yang tepat melintasi koordinat pusat <span class="math notranslate nohighlight">\((0,0)\)</span> dengan pembulatan fungsi <span class="math notranslate nohighlight">\(f(x) = 1.08x\)</span>.Formulasinya terbukti sah dan valid:$<span class="math notranslate nohighlight">\(\mathbf{Y = 1.0769 X}\)</span>$</p></li>
+<li><p>GeoGebra memberikan visualisasi grafis fiting garis yang tepat melintasi koordinat pusat <span class="math notranslate nohighlight">\((0,0)\)</span> dengan pembulatan fungsi <span class="math notranslate nohighlight">\(f(x) = 1.08x\)</span>.Formulasinya terbukti sah dan valid:</p></li>
 </ol>
+<div class="math notranslate nohighlight">
+\[\mathbf{Y = 1.0769 X}\]</div>
 </section>
 </section>
 
