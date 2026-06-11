@@ -15,10 +15,12 @@ chapters:
   sections:
   - file: missing_values
   - file: normalisasi_data
-  - file: k-NN
+  - file: knn
   - file: WKNN
 - file: UTS
 - file: tugas01
 - file: deccision_tree
 - file: random_forest
 - file: geogebra
+- file: Data_Crawling
+- file: skforecast
