@@ -1,5 +1,7 @@
 # Mengukur Jarak
 
+---
+
 ## Similarity dan Dissimilarity
 
 ### Similarity
@@ -12,6 +14,8 @@
 - Sangat rendah bila benda yang lebih mirip
 - Minimum dissimilarity $= 0$
 
+---
+
 ## Data Matrix and Dissimilarity Matrix
 
 ### Data Matrix
@@ -23,6 +27,8 @@
 - Matrik segitiga
 - Single mode
 
+---
+
 ## Mengukur Jarak untuk Atribut Nominal
 
 - Misal terdapat 2 atau lebih nilai, misal., red, yellow, blue, green (generalisasi dari atribut binary)
@@ -32,6 +38,8 @@ $$d(i, j) = \frac{p - m}{p}$$
 
   - $m$: jumlah atribut yang sesuai (cocok)
   - $p$: jumlah variabel (total atribut)
+
+---
 
 ## Mengukur Jarak untuk Atribut Binary
 
@@ -52,11 +60,15 @@ $$\text{sim}(i, j) = \frac{q}{q + r + s}$$
 
 - Jaccard coefficient sama dengan "coherence"
 
+---
+
 ## Contoh: Atribut Binary
 
 - Jenis kelamin → atribut symmetric
 - Atribut lain adalah asymmetric binary
 - Nilai Y dan P adalah 1, dan nilai N adalah 0
+
+---
 
 ## Atribut Ordinal
 
@@ -69,6 +81,8 @@ $$\text{sim}(i, j) = \frac{q}{q + r + s}$$
 $$z_{if} = \frac{r_{if} - 1}{M_f - 1}$$
 
 - Hitung ketidaksamaan (dissimilarity) menggunakan metode variabel skala interval (numerik)
+
+---
 
 ## Standarisasi Data Numerik (Normalisasi)
 
@@ -90,10 +104,14 @@ $$z_{if} = \frac{x_{if} - \bar{x}_f}{s_f}$$
 
 Menggunakan mean absolute deviation lebih robust/handal daripada menggunakan standard deviation.
 
+---
+
 ## Contoh: Data Matrix and Dissimilarity Matrix
 
 - **Data Matrix**
 - **Dissimilarity Matrix** (dengan Euclidean Distance)
+
+---
 
 ## Jarak pada Data Numerik: Minkowski Distance
 
@@ -109,6 +127,8 @@ $$d(i, j) = \left( \sum_{f=1}^{p} |x_{if} - x_{jf}|^h \right)^{1/h}$$
 - **Symmetry:** $d(i, j) = d(j, i)$
 - **Triangle Inequality:** $d(i, j) \leq d(i, k) + d(k, j)$
 
+---
+
 ## Special Cases of Minkowski Distance
 
 | $h$ | Nama | Rumus |
@@ -120,12 +140,16 @@ $$d(i, j) = \left( \sum_{f=1}^{p} |x_{if} - x_{jf}|^h \right)^{1/h}$$
 - **Manhattan ($h=1$):** Misal., the Hamming distance — jumlah bit yang berbeda antara dua vektor biner
 - **Supremum ($h \to \infty$):** Selisih maksimum di antara atribut-atributnya dalam suatu vektor
 
+---
+
 ## Contoh: Minkowski Distance
 
 **Dissimilarity Matrices:**
 - Manhattan ($L_1$)
 - Euclidean ($L_2$)
 - Supremum ($L_\infty$)
+
+---
 
 ## Atribut Campuran
 
@@ -139,6 +163,8 @@ $$d(i, j) = \frac{\sum_{f=1}^{p} \delta_{ij}^{(f)} \cdot d_{ij}^{(f)}}{\sum_{f=1
 - **Numerik:** gunakan normalisasi
 - **Ordinal:** hitung ranking $r_{if}$ dan cari $z_{if}$ sebagai skala interval
 
+---
+
 ## Cosine Similarity
 
 - Dokumen dapat dinyatakan dengan ribuan atribut yang masing-masing menyatakan kemunculan kata-kata dalam suatu dokumen
@@ -150,6 +176,8 @@ $$\cos(\mathbf{d_1}, \mathbf{d_2}) = \frac{\mathbf{d_1} \cdot \mathbf{d_2}}{\|\m
 
 - $\cdot$ menyatakan perkalian titik (dot product) antar vektor
 - $\|\mathbf{d}\|$ adalah panjang vektor $\mathbf{d}$
+
+---
 
 ## Contoh: Cosine Similarity
 

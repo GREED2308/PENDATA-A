@@ -65,6 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Data_Crawling';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Analisa Data (A)" href="skforecast.html" />
     <link rel="prev" title="Laporan Analisis Data: Regresi Linier Sederhana" href="geogebra.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -199,6 +200,22 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="random_forest.html">Decision Tree vs. Random Forest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geogebra.html">Laporan Analisis Data: Regresi Linier Sederhana</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Peramalan Kadar NO₂ di Wilayah Kota Sumenep</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skforecast.html">Analisa Data (A)</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </ul>
 
     </div>
@@ -470,7 +487,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Authenticated using refresh token.
+<div class="output text_html">Visit <a href="https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=JHTK-SLNK" title="Authenticate at https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=JHTK-SLNK" target="_blank" rel="noopener noreferrer">https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=JHTK-SLNK</a> <a href="#" onclick="navigator.clipboard.writeText('https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=JHTK-SLNK');return false;" title="Copy authentication URL to clipboard">&#128203;</a> to authenticate.</div><div class="output text_html">✅ Authorized successfully</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Authenticated using device code flow.
 </pre></div>
 </div>
 </div>
@@ -547,21 +564,22 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0:00:00 Job &#39;j-2606092142464ab38a544b47f22454b8&#39;: send &#39;start&#39;
-0:00:02 Job &#39;j-2606092142464ab38a544b47f22454b8&#39;: queued (progress 0%)
-0:00:08 Job &#39;j-2606092142464ab38a544b47f22454b8&#39;: queued (progress 0%)
-0:00:14 Job &#39;j-2606092142464ab38a544b47f22454b8&#39;: queued (progress 0%)
-0:00:23 Job &#39;j-2606092142464ab38a544b47f22454b8&#39;: running (progress N/A)
-0:00:33 Job &#39;j-2606092142464ab38a544b47f22454b8&#39;: running (progress N/A)
-0:00:45 Job &#39;j-2606092142464ab38a544b47f22454b8&#39;: running (progress N/A)
-0:01:01 Job &#39;j-2606092142464ab38a544b47f22454b8&#39;: running (progress N/A)
-0:01:20 Job &#39;j-2606092142464ab38a544b47f22454b8&#39;: running (progress N/A)
-0:01:45 Job &#39;j-2606092142464ab38a544b47f22454b8&#39;: running (progress N/A)
-0:02:15 Job &#39;j-2606092142464ab38a544b47f22454b8&#39;: running (progress N/A)
-0:02:52 Job &#39;j-2606092142464ab38a544b47f22454b8&#39;: running (progress N/A)
-0:03:39 Job &#39;j-2606092142464ab38a544b47f22454b8&#39;: running (progress N/A)
-0:04:38 Job &#39;j-2606092142464ab38a544b47f22454b8&#39;: running (progress N/A)
-0:05:38 Job &#39;j-2606092142464ab38a544b47f22454b8&#39;: finished (progress 100%)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0:00:00 Job &#39;j-2606110112504df68b19a8a82068722e&#39;: send &#39;start&#39;
+0:00:02 Job &#39;j-2606110112504df68b19a8a82068722e&#39;: queued (progress 0%)
+0:00:08 Job &#39;j-2606110112504df68b19a8a82068722e&#39;: queued (progress 0%)
+0:00:15 Job &#39;j-2606110112504df68b19a8a82068722e&#39;: queued (progress 0%)
+0:00:23 Job &#39;j-2606110112504df68b19a8a82068722e&#39;: running (progress N/A)
+0:00:33 Job &#39;j-2606110112504df68b19a8a82068722e&#39;: running (progress N/A)
+0:00:46 Job &#39;j-2606110112504df68b19a8a82068722e&#39;: running (progress N/A)
+0:01:02 Job &#39;j-2606110112504df68b19a8a82068722e&#39;: running (progress N/A)
+0:01:26 Job &#39;j-2606110112504df68b19a8a82068722e&#39;: running (progress N/A)
+0:01:50 Job &#39;j-2606110112504df68b19a8a82068722e&#39;: running (progress N/A)
+0:02:20 Job &#39;j-2606110112504df68b19a8a82068722e&#39;: running (progress N/A)
+0:02:58 Job &#39;j-2606110112504df68b19a8a82068722e&#39;: running (progress N/A)
+0:03:45 Job &#39;j-2606110112504df68b19a8a82068722e&#39;: running (progress N/A)
+0:04:44 Job &#39;j-2606110112504df68b19a8a82068722e&#39;: running (progress N/A)
+0:05:44 Job &#39;j-2606110112504df68b19a8a82068722e&#39;: running (progress N/A)
+0:06:45 Job &#39;j-2606110112504df68b19a8a82068722e&#39;: finished (progress 100%)
 </pre></div>
 </div>
 </div>
@@ -1090,6 +1108,15 @@ dtype: float64
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Laporan Analisis Data: Regresi Linier Sederhana</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="skforecast.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Analisa Data (A)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
